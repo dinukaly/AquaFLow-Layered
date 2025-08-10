@@ -1,0 +1,42 @@
+.dialog-pane {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+.dialog-pane .button {
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 16px;
+    -fx-font-family: 'Segoe UI';
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.dialog-pane .button:hover {
+    -fx-opacity: 0.9;
+}
+
+.text-field, .text-area {
+    -fx-font-family: 'Segoe UI';
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-focus-color: #3498db;
+    -fx-faint-focus-color: #3498db22;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 1.5px;
+}
+
+.text-area .content {
+    -fx-background-radius: 4px;
+}
+
+.label {
+    -fx-font-family: 'Segoe UI';
+    -fx-font-size: 14px;
+}

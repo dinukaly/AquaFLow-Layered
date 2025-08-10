@@ -1,0 +1,33 @@
+#addButton{
+    -fx-font-weight: bold;
+    -fx-background-color: #3564cb;
+}
+#viewConsumptionBtn{
+    -fx-font-weight: bold;
+    -fx-background-color: #3564cb;
+}
+
+#viewButton{
+    -fx-font-weight: bold;
+    -fx-background-color: #3564cb;
+    -fx-border-color: #3564cb;
+}
+
+#btnReports{
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+    -fx-text-fill: #3564cb;
+    -fx-border-color: #3564cb;
+}
+
+
+#btnPaid-clicked {
+    -fx-text-fill: #3564cb;
+}
+
+
+#btnDiscard{
+    -fx-font-weight: bold;
+    -fx-background-color: #e8112a;
+    -fx-text-fill: white;
+}

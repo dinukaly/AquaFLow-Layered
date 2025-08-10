@@ -1,0 +1,22 @@
+#childRoot{
+    -fx-background-color: white !important;
+}
+
+
+#cmbDistrict{
+    -fx-background-color: #e7e7e7;
+}
+
+#allWaterSources{
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+
+    /* Soft drop shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);
+
+    /* Initial scale (for animation later) */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}

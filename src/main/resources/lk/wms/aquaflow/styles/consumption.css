@@ -1,0 +1,192 @@
+#monthlyConsumption{
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+
+    /* Soft drop shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);
+
+    /* Initial scale (for animation later) */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+
+#consumptionByVillage{
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+
+    /* Soft drop shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);
+
+    /* Initial scale (for animation later) */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+#consumptionstableview{
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+
+    /* Soft drop shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);
+
+    /* Initial scale (for animation later) */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: transparent;
+    -fx-background-radius: 8px 8px 0 0;
+}
+
+.table-view .column-header {
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-cell-size: 40px;
+}
+
+.table-view .table-row-cell:filled:hover {
+    -fx-background-color: #f0f8ff;
+}
+
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #4e54c8;
+    -fx-text-fill: white;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #444;
+    -fx-padding: 0 10px 0 10px;
+}
+
+.table-view .filler {
+    -fx-background-color: white;
+}
+
+
+/*!* Main ListView styling *!*/
+#waterAllocationRootPane .list-view {
+    -fx-background-color: transparent;
+    -fx-padding: 10px;
+    -fx-border-width: 0;
+}
+
+#waterAllocationRootPane .list-cell {
+    -fx-padding: 15px;
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+    -fx-margin: 5px;
+}
+
+#waterAllocationRootPane .list-cell:empty {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-effect: none;
+}
+
+/*!* Source item styling *!*/
+#waterAllocationRootPane .source-item {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+
+#waterAllocationRootPane .source-item:hover {
+    -fx-background-color: #f5f5f5;
+}
+
+#waterAllocationRootPane .source-item.active {
+    -fx-background-color: #e3f2fd;
+    -fx-border-left: 3px solid #2196F3;
+}
+
+/*!* Source name styling *!*/
+#waterAllocationRootPane .source-name {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/*!* Source details styling *!*/
+#waterAllocationRootPane .source-details {
+    -fx-spacing: 15px;
+    -fx-alignment: center-left;
+}
+
+#waterAllocationRootPane .source-details .label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7f8c8d;
+    -fx-padding: 3px 8px;
+    -fx-background-radius: 10px;
+    -fx-background-color: #ecf0f1;
+}
+
+/*!* Allocation details panel *!*/
+#waterAllocationRootPane .allocation-details {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+    -fx-padding: 20px;
+}
+
+#waterAllocationRootPane .detail-header {
+    -fx-spacing: 10px;
+    -fx-alignment: center-left;
+}
+
+#waterAllocationRootPane .detail-header .label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* ComboBox Reset Styles */
+.combo-box {
+    -fx-background-radius: 0;
+    -fx-effect: null;
+    -fx-border-color: -fx-box-border;
+    -fx-border-width: 1px;
+    -fx-background-color: -fx-control-inner-background;
+}
+
+.combo-box .list-cell {
+    -fx-background-radius: 0;
+    -fx-effect: null;
+    -fx-background-color: -fx-control-inner-background;
+    -fx-padding: 3px 8px;
+}
+
+.combo-box .list-view {
+    -fx-background-radius: 0;
+    -fx-effect: null;
+    -fx-border-color: -fx-box-border;
+}

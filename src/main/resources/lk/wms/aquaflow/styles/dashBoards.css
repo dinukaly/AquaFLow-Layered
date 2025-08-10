@@ -1,0 +1,153 @@
+#sideBar{
+    -fx-background-color: #043164;
+    -fx-border-color: #043164;
+    -fx-border-width: 2px 2px 2px 2px ;
+    /*-fx-border-radius: 20px ;*/
+    /*-fx-background-radius: 20px ;*/
+    -fx-border-style: solid;
+}
+
+
+
+#proPicture{
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-border-width: 2px;
+    -fx-border-color: white;
+}
+
+
+.button {
+    /*-fx-background-color: linear-gradient(to bottom, #e0e0e0, #bdbdbd);*/
+    /*-fx-text-fill: black;*/
+    /*-fx-font-size: 14px;*/
+    /*-fx-font-weight: bold;*/
+    /*-fx-padding: 10px 20px;*/
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    /*-fx-border-color: #9e9e9e;*/
+    /*-fx-border-width: 1px;*/
+    /*-fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 1);*/
+    /*-fx-cursor: hand;*/
+    /*-fx-transition: all 0.3s ease-in-out;*/
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, rgba(189, 189, 189, 0.3), rgba(158, 158, 158, 0.32));
+    /*-fx-effect: dropshadow(three-pass-box, rgba(128, 128, 128, 0.5), 10, 0, 0, 5);*/
+    -fx-scale-x: 1.009;
+    -fx-scale-y: 1.009;
+}
+#dashRectangle {
+    /*-fx-fill: linear-gradient(to right, #8cddf5, #80aaf1); !* Gradient fill *!*/
+    -fx-background-radius: 20; /* Rounded corners */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 15, 0, 5, 5); /* Drop shadow effect */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+#dashRectangle1 {
+    /*-fx-fill: linear-gradient(to right, #8cddf5, #80aaf1); !* Gradient fill *!*/
+    -fx-background-radius: 20; /* Rounded corners */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition */
+    -fx-stroke: #b9b9b9;
+
+}
+
+#dashRectangle11 {
+    /*-fx-fill: linear-gradient(to right, #8cddf5, #80aaf1); !* Gradient fill *!*/
+    -fx-background-radius: 20; /* Rounded corners */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition */
+    -fx-stroke: #b9b9b9;
+}
+
+#dashRectangle111 {
+    /*-fx-fill: linear-gradient(to right, #8cddf5, #80aaf1); !* Gradient fill *!*/
+    -fx-background-radius: 20; /* Rounded corners */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition */
+    -fx-stroke: #b9b9b9;
+
+}
+
+#dashRectangle1111 {
+    /*-fx-fill: linear-gradient(to right, #8cddf5, #80aaf1); !* Gradient fill *!*/
+    -fx-background-radius: 20; /* Rounded corners */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition */
+    -fx-stroke: #b9b9b9;
+
+}
+
+#dashRectangle1112 {
+    /*-fx-fill: linear-gradient(to right, #8cddf5, #80aaf1); !* Gradient fill *!*/
+    -fx-background-radius: 20; /* Rounded corners */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition */
+    -fx-stroke: #b9b9b9;
+
+}
+
+#dashRectangle11121{
+    /*-fx-fill: linear-gradient(to right, #8cddf5, #80aaf1); !* Gradient fill *!*/
+    -fx-background-radius: 20; /* Rounded corners */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition */
+    -fx-stroke: #b9b9b9;
+
+}
+
+/* Style for the chart background */
+.chart {
+    -fx-background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    -fx-background-radius: 15px; /* Smooth rounded corners */
+    -fx-border-color: rgba(255, 255, 255, 0.3); /* Subtle border */
+    -fx-border-width: 1px;
+    -fx-border-radius: 15px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+    -fx-backdrop-filter: blur(10px);
+}
+
+
+/* Style for the chart title */
+.chart-title {
+    -fx-text-fill: #37474f;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Style for the chart axis labels */
+.axis-label {
+    -fx-text-fill: #455a64;
+    -fx-font-size: 12px;
+}
+
+/* Style for the horizontal and vertical grid lines */
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: #e0e0e0;
+}
+
+/* Style for the plotted line */
+.default-color0.chart-series-line {
+    -fx-stroke: #ff5722; /* Orange line */
+    -fx-stroke-width: 2px;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 87, 34, 0.5), 5, 0, 0, 2);
+}
+
+/* Style for the dots (data points) */
+.default-color0.chart-line-symbol {
+    -fx-background-color: #ffffff, #ff5722;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 4px;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 87, 34, 0.6), 5, 0, 0, 1);
+}
+
+/* Style for the legend */
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.chart-legend-item-symbol {
+    -fx-background-color: #ff5722;
+    -fx-background-radius: 5px;
+}
+
+

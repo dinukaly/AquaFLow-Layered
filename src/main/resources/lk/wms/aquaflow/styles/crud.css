@@ -1,0 +1,213 @@
+/*!* ComboBox Base Style *!*/
+/*.combo-box {*/
+/*    !*-fx-background-color: linear-gradient(to bottom, #2196F3, #0D47A1); !* Blue gradient *!*!*/
+/*    !*-fx-border-color: #64B5F6;*!*/
+/*    !*-fx-border-width: 2px;*!*/
+/*    -fx-border-radius: 8px;*/
+/*    -fx-padding: 1px;*/
+/*    -fx-font-size: 14px;*/
+/*    -fx-text-fill: white;*/
+/*    -fx-background-radius: 10px;*/
+
+/*}*/
+
+
+
+/*!* Drop-down List *!*/
+/*.combo-box .list-view {*/
+/*    -fx-background-color: white;*/
+/*    !*-fx-border-color: #2196F3;*!*/
+/*    -fx-border-radius: 8px;*/
+/*}*/
+
+/*!* Items in Dropdown *!*/
+/*.combo-box .list-cell {*/
+/*    !*-fx-text-fill: #0D47A1;*!*/
+/*    -fx-font-size: 14px;*/
+/*    -fx-padding: 8px;*/
+/*}*/
+
+/*!* Highlighted Item *!*/
+/*.combo-box .list-cell:hover {*/
+/*    !*-fx-background-color: #64B5F6;*!*/
+/*    -fx-text-fill: white;*/
+/*}*/
+
+/*!* Selected Item *!*/
+/*.combo-box .list-cell:selected {*/
+/*    !*-fx-background-color: #1976D2;*!*/
+/*    -fx-text-fill: white;*/
+/*}*/
+
+/*!*.text-field{*!*/
+/*!*    -fx-background-radius: 10px;*!*/
+/*!*}*!*/
+
+
+/*#btnSaveButton{*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: green;*/
+/*}*/
+
+
+/*#btnSaveButton:hover {*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: #02ab02;*/
+/*}*/
+/*!* Apply gradient background to the table column headers *!*/
+/*.table-view .column-header {*/
+/*    -fx-background-color: linear-gradient(to bottom, #4C9ED9, #1A73E8) !important; !* Blue Gradient *!*/
+/*}*/
+
+/*!* Apply white text color to column header labels *!*/
+/*.table-view .column-header .label {*/
+/*    -fx-text-fill: white; !* Text color set to white *!*/
+/*    -fx-font-weight: bold; !* Make text bold *!*/
+/*    -fx-font-size: 14px; !* Font size *!*/
+/*}*/
+
+
+
+
+/*.text-field {*/
+/*    -fx-background-color: #f5f5f5; !* Soft gray background *!*/
+/*    -fx-border-color: #c5c5c5;*/
+/*    -fx-border-width: 1px;*/
+/*    -fx-border-radius: 5px;*/
+/*    -fx-background-radius: 8px;*/
+/*    -fx-font-size: 14px;*/
+/*    -fx-padding: 7px;*/
+/*    -fx-text-fill: #333;*/
+/*    -fx-font-weight: bold;*/
+/*    !*-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);*!*/
+/*    -fx-transition: all 0.3s ease-in-out;*/
+/*}*/
+
+/*.text-field:hover {*/
+/*    -fx-background-color: #e0e0e0; !* Slightly darker gray *!*/
+/*}*/
+
+/*.text-field:focused {*/
+/*    -fx-background-color: white;*/
+/*    -fx-effect: dropshadow(gaussian, rgba(169, 169, 169, 0.2), 8, 0, 0, 3);*/
+/*}*/
+
+
+/*!* Base checkbox style *!*/
+/*.check-box {*/
+/*    -fx-padding: 5px;*/
+/*    -fx-font-size: 14px;*/
+/*    -fx-font-family: "Poppins", sans-serif;*/
+/*    -fx-text-fill: #ddd;*/
+/*}*/
+
+/*!* Checkbox box (default state) *!*/
+/*.check-box .box {*/
+/*    -fx-background-color: transparent;*/
+/*    -fx-border-color: #888;*/
+/*    -fx-border-width: 2px;*/
+/*    -fx-border-radius: 4px;*/
+/*    -fx-min-width: 18px;*/
+/*    -fx-min-height: 18px;*/
+/*    -fx-max-width: 18px;*/
+/*    -fx-max-height: 18px;*/
+/*    -fx-alignment: center;*/
+/*    -fx-transition: all 0.3s ease;*/
+/*}*/
+
+/*!* Hover effect *!*/
+/*.check-box:hover .box {*/
+/*    -fx-border-color: #ccc;*/
+/*}*/
+
+/*!* Checkbox selected (filled when checked) *!*/
+/*.check-box:selected .box {*/
+/*    -fx-background-color: #2196F3; !* Nice modern blue *!*/
+/*    -fx-border-color: #2196F3;*/
+/*}*/
+
+/*!* Checkmark (modern, clean shape) *!*/
+/*.check-box:selected .mark {*/
+/*    -fx-background-color: white;*/
+/*    -fx-shape: "M 0 5 L 3 8 L 8 0 L 6 0 L 3 5 L 2 4 Z";*/
+/*    -fx-scale-x: 1.1;*/
+/*    -fx-scale-y: 1.1;*/
+/*}*/
+/*.check-box .text {*/
+/*    -fx-fill: #333; !* Dark text for contrast *!*/
+/*}*/
+
+
+/*#btnAllocation{*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: #3564cb;*/
+/*}*/
+
+
+/*#btnAllocation:hover {*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: #1c538a;*/
+/*}*/
+
+
+/*#btnReports{*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: #3564cb;*/
+/*}*/
+
+
+/*#btnReports:hover {*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: #1c538a;*/
+/*}*/
+
+
+/*.text-area {*/
+/*    -fx-background-color: #f5f5f5; !* Soft gray background *!*/
+/*    -fx-border-color: #c5c5c5;*/
+/*    !*-fx-border-width: 1px;*!*/
+/*    -fx-border-radius: 5px;*/
+/*    -fx-background-radius: 8px;*/
+/*    -fx-font-size: 14px;*/
+/*    !*-fx-padding: 7px;*!*/
+/*    -fx-text-fill: #333;*/
+/*    -fx-font-weight: bold;*/
+/*    !*-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);*!*/
+/*    -fx-transition: all 0.3s ease-in-out;*/
+/*}*/
+
+/*.text-area:hover {*/
+/*    -fx-background-color: #e0e0e0; !* Slightly darker gray *!*/
+/*}*/
+
+/*.text-area:focused {*/
+/*    -fx-background-color: white;*/
+/*    -fx-effect: dropshadow(gaussian, rgba(169, 169, 169, 0.2), 8, 0, 0, 3);*/
+/*}*/
+
+
+
+
+/*#btnInventory{*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: #3564cb;*/
+/*}*/
+
+
+/*#btnInventory:hover {*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: #1c538a;*/
+/*}*/
+
+
+
+/*#btnEmailBtn{*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: #3564cb;*/
+/*}*/
+
+
+/*#btnEmailBtn:hover {*/
+/*    -fx-font-weight: bold;*/
+/*    -fx-background-color: #1c538a;*/
+/*}*/

@@ -1,0 +1,126 @@
+
+.root{
+    -fx-background-color: white !important;
+
+}
+
+.sidebar-pane{
+    -fx-background-color: #2083b9 !important;
+
+}
+
+.button {
+    /*-fx-background-color: #007bff;*/
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+    -fx-transition: all 0.3s ease-in-out;
+
+}
+
+.button:hover {
+    -fx-background-color: #0056b3;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 4);
+    -fx-scale-x: 1.005;
+    -fx-scale-y: 1.005;
+}
+
+
+#changingAnchor{
+    -fx-background-color: white !important;
+
+}
+
+
+#dashRectangle1 {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+
+    /* Soft drop shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);
+
+    /* Initial scale (for animation later) */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+/* For hover effect - needs to be done in code (JavaFX doesn't support hover in CSS only) */
+
+
+#dashRectangle11 {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+
+    /* Soft drop shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);
+
+    /* Initial scale (for animation later) */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+
+#dashRectangle111 {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+
+    /* Soft drop shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);
+
+    /* Initial scale (for animation later) */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+
+#dashRectangle1111 {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+
+    /* Soft drop shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);
+
+    /* Initial scale (for animation later) */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+
+#recentDestributions {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+
+    /* Soft drop shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);
+
+    /* Initial scale (for animation later) */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+#watersourceChart{
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+
+    /* Soft drop shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 4);
+
+    /* Initial scale (for animation later) */
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}

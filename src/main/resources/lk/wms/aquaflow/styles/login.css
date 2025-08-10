@@ -1,0 +1,63 @@
+#btnLogin {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+#btnLogin:hover {
+    -fx-background-color: #0056b3;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 4);
+    -fx-scale-x: 1.005;
+    -fx-scale-y: 1.005;
+}
+
+
+.text-field {
+    -fx-background-color: #f5f5f5; /* Soft gray background */
+    -fx-border-color: transparent;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 8px;
+    -fx-font-size: 14px;
+    -fx-padding: 7px;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+    -fx-transition: all 0.3s ease-in-out;
+}
+/* Modern Radio Button Styles */
+.radio-button {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-cursor: hand;
+}
+
+.radio-button .radio {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 3px;
+}
+
+.radio-button:selected .radio {
+    -fx-border-color: #3498db;
+}
+
+.text-field:hover {
+    -fx-background-color: #e0e0e0; /* Slightly darker gray */
+}
+
+.text-field:focused {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0, 0, 3);
+}
+
+
