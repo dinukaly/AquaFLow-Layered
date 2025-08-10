@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="591.0" prefWidth="406.0" stylesheets="@../../styles/modals.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.aquaFlow.controller.modal.AddInventoryModalController">
+   <children>
+      <Text fx:id="titleLabel" layoutX="121.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Inventories">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="31.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="31.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="32.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="32.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vendor Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtQuantity" layoutX="31.0" layoutY="264.0" prefHeight="43.0" prefWidth="345.0" />
+      <Button fx:id="addButton" layoutX="203.0" layoutY="520.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="33.0" prefWidth="82.0" stylesheets="@../../styles/buttons.css" text="Save" textFill="WHITE" />
+      <Button fx:id="btnDiscard" layoutX="293.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnDiscardOnAction" prefHeight="33.0" prefWidth="82.0" stylesheets="@../../styles/buttons.css" text="Discard" textFill="WHITE" />
+      <Text fx:id="lblInventoryId" layoutX="133.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I001">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbType" layoutX="30.0" layoutY="176.0" onAction="#cmbTypeOnAction" prefHeight="38.0" prefWidth="345.0" />
+      <ComboBox fx:id="cmbVendorName" layoutX="31.0" layoutY="460.0" onAction="#cmbVendorNameOnAction" prefHeight="38.0" prefWidth="345.0" />
+      <TextField fx:id="txtUnitPrice" layoutX="30.0" layoutY="360.0" prefHeight="43.0" prefWidth="345.0" />
+      <Text layoutX="31.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

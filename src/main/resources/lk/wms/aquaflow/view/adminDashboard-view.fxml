@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="adminDashBoardRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1274.0" styleClass="rootAnchor" stylesheets="@../styles/admindashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.wms.aquaflow.controller.AdminDashboardController">
+   <children>
+      <AnchorPane fx:id="changingAnchor" layoutX="290.0" layoutY="-4.0" prefHeight="680.0" prefWidth="985.0">
+         <children>
+            <HBox layoutY="15.0" prefHeight="56.0" prefWidth="963.0" />
+            <Rectangle fx:id="dashRectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="44.0" layoutX="21.0" layoutY="22.0" stroke="WHITE" strokeType="INSIDE" width="936.0" />
+            <Text fill="#363434" layoutX="68.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADMIN DASHBOARD">
+               <font>
+                  <Font name="Ebrima" size="14.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="21.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-menu-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="884.0" layoutY="35.0" onDragDetected="#btnAlertsOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-bell-24.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="923.0" layoutY="35.0" onDragDetected="#btnReceiveEmailOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-email-50.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="lblDateOnAction" fill="#363434" layoutX="751.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2025-10-10">
+               <font>
+                  <Font name="Ebrima" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="lblTimeOnAction" fill="#363434" layoutX="832.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="06:20">
+               <font>
+                  <Font name="Ebrima" size="14.0" />
+               </font>
+            </Text>
+            <Rectangle fx:id="dashRectangle1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="105.0" layoutX="16.0" layoutY="99.0" stroke="WHITE" strokeType="INSIDE" width="224.0" />
+            <Text fill="#9a9a9a" layoutX="29.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Villages">
+               <font>
+                  <Font name="Ebrima Bold" size="11.0" />
+               </font>
+            </Text>
+            <Text fx:id="lblTotalVillages" fill="#363434" layoutX="31.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="132">
+               <font>
+                  <Font name="Ebrima" size="23.0" />
+               </font>
+            </Text>
+            <Text fill="#90da46" layoutX="32.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2 new this month">
+               <font>
+                  <Font name="Ebrima" size="11.0" />
+               </font>
+            </Text>
+            <Rectangle fx:id="dashRectangle11" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="105.0" layoutX="253.0" layoutY="99.0" stroke="WHITE" strokeType="INSIDE" width="224.0" />
+            <Text fill="#9a9a9a" layoutX="273.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Water Sources">
+               <font>
+                  <Font name="Ebrima Bold" size="11.0" />
+               </font>
+            </Text>
+            <Text fx:id="lblTotalMaintanence" fill="#363434" layoutX="275.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7">
+               <font>
+                  <Font name="Ebrima" size="23.0" />
+               </font>
+            </Text>
+            <Text fill="#90da46" layoutX="273.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 % increased">
+               <font>
+                  <Font name="Ebrima" size="11.0" />
+               </font>
+            </Text>
+            <Rectangle fx:id="dashRectangle111" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="105.0" layoutX="489.0" layoutY="99.0" stroke="WHITE" strokeType="INSIDE" width="224.0" />
+            <Text fx:id="lblTotalHouseholds" fill="#363434" layoutX="508.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="230">
+               <font>
+                  <Font name="Ebrima" size="23.0" />
+               </font>
+            </Text>
+            <Text fill="#9a9a9a" layoutX="508.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Housholds">
+               <font>
+                  <Font name="Ebrima Bold" size="11.0" />
+               </font>
+            </Text>
+            <Text fill="#90da46" layoutX="508.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2 new this month">
+               <font>
+                  <Font name="Ebrima" size="11.0" />
+               </font>
+            </Text>
+            <Rectangle fx:id="dashRectangle1111" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="105.0" layoutX="725.0" layoutY="99.0" stroke="WHITE" strokeType="INSIDE" width="224.0" />
+            <Text fx:id="lblTotalEmployees" fill="#363434" layoutX="749.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="230">
+               <font>
+                  <Font name="Ebrima" size="23.0" />
+               </font>
+            </Text>
+            <Text fill="#9a9a9a" layoutX="747.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maintance Requests">
+               <font>
+                  <Font name="Ebrima Bold" size="11.0" />
+               </font>
+            </Text>
+            <Text fill="#d95348" layoutX="746.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2 more to maintain">
+               <font>
+                  <Font name="Ebrima" size="11.0" />
+               </font>
+            </Text>
+            <Rectangle fx:id="recentDestributions" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="401.0" layoutX="20.0" layoutY="239.0" stroke="WHITE" strokeType="INSIDE" width="604.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="401.0" layoutX="645.0" layoutY="239.0" stroke="WHITE" strokeType="INSIDE" width="325.0" />
+            <Text fill="#363434" layoutX="46.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Water Distributions">
+               <font>
+                  <Font name="Ebrima Bold" size="13.0" />
+               </font>
+            </Text>
+            <Button fx:id="addButton" layoutX="477.0" layoutY="260.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="37.0" prefWidth="112.0" stylesheets="@../styles/buttons.css" text="+ Add new " />
+            <Text fill="#363434" layoutX="663.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Source Status">
+               <font>
+                  <Font name="Ebrima Bold" size="13.0" />
+               </font>
+            </Text>
+            <Button fx:id="viewButton" layoutX="357.0" layoutY="258.0" mnemonicParsing="false" onAction="#viewButtonOnAction" prefHeight="37.0" prefWidth="112.0" stylesheets="@../styles/buttons.css" text="View All" />
+            <TableView fx:id="recentDistributionTBV" layoutX="23.0" layoutY="331.0" prefHeight="308.0" prefWidth="596.0" stylesheets="@../styles/table.css">
+              <columns>
+                <TableColumn fx:id="dateCol" prefWidth="90.0" text="Date" />
+                <TableColumn fx:id="villageCol" prefWidth="95.0" text="Village" />
+                  <TableColumn fx:id="sourceCol" prefWidth="100.0" text="Source" />
+                  <TableColumn fx:id="amountCol" prefWidth="85.0" text="Amount (L)" />
+                  <TableColumn fx:id="statusCol" prefWidth="104.0" text="Status" />
+                  <TableColumn fx:id="actionCol" prefWidth="120.0" text="Actions" />
+              </columns>
+            </TableView>
+            <PieChart fx:id="waterSourceChart" layoutX="658.0" layoutY="303.0" prefHeight="292.0" prefWidth="282.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="fixANchor" prefHeight="680.0" prefWidth="290.0">
+         <children>
+            <Text fill="WHITE" layoutX="35.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rural Water ">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="36.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Management System">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <!--      <JFXButton fx:id="btnDistributions" layoutX="45.0" layoutY="273.0" onAction="#btnDistributionsOnAction" prefHeight="44.0" prefWidth="204.0" text="         Distributions" textFill="WHITE">-->
+            <!--         <font>-->
+            <!--            <Font name="Century Gothic Bold" size="12.0" />-->
+            <!--         </font>-->
+            <!--      </JFXButton>-->
+            <JFXButton fx:id="btnHouseHolds" layoutX="35.0" layoutY="276.0" onAction="#btnHouseHoldsOnAction" prefHeight="44.0" prefWidth="204.0" text="        Households" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="75.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-home-96.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnHouseHolds1" layoutX="44.0" layoutY="326.0" onAction="#btnInventoryOnAction" prefHeight="44.0" prefWidth="204.0" text=" Inventory" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="73.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-inventory-50.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnBilling" layoutX="44.0" layoutY="547.0" onAction="#btnBillingOnAction" prefHeight="44.0" prefWidth="204.0" text="Billing" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnSignout" layoutX="50.0" layoutY="592.0" onAction="#btnSignoutOnAction" prefHeight="44.0" prefWidth="204.0" text=" Sign out" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="74.0" layoutY="604.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-sign-out-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="27.0" fitWidth="24.0" layoutX="71.0" layoutY="557.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-payment-30.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnVendor" layoutX="35.0" layoutY="509.0" onAction="#btnVendorOnAction" prefHeight="44.0" prefWidth="204.0" text="        Vendors" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="71.0" layoutY="521.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-face-50.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="btnVillage" layoutX="45.0" layoutY="182.0" onAction="#btnVillageOnAction" prefHeight="44.0" prefWidth="204.0" text=" Villages" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnWaterAllocation" layoutX="44.0" layoutY="227.0" onAction="#btnWaterAllocationOnAction" prefHeight="44.0" prefWidth="204.0" text="             Water Allocation" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnMaintainace" layoutX="44.0" layoutY="369.0" onAction="#btnMaintenanceOnAction" prefHeight="44.0" prefWidth="204.0" text="       Maintenance" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnEmployee" layoutX="44.0" layoutY="414.0" onAction="#btnEmployeeOnAction" prefHeight="44.0" prefWidth="204.0" text="    Employees" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnComplaints" layoutX="45.0" layoutY="465.0" onAction="#btnComplaintsOnAction" prefHeight="44.0" prefWidth="204.0" text="      Complaints" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="27.0" fitWidth="28.0" layoutX="74.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-neighborhood-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="20.0" layoutX="75.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-circle-chart-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="74.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-wrench-24.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="73.0" layoutY="424.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-employees-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="74.0" layoutY="476.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-problem-50.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnVillage1" layoutX="45.0" layoutY="135.0" onAction="#btnDashboardOnAction" prefHeight="44.0" prefWidth="204.0" text="     Dashborad" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="22.0" fitWidth="24.0" layoutX="77.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-home-26.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

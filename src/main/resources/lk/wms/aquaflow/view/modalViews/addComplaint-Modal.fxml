@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="406.0" stylesheets="@../../styles/modals.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.aquaFlow.controller.modal.AddComplaintModalController">
+   <children>
+      <Text fx:id="titleLabel" layoutX="127.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Complaints">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="31.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complaints Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="31.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Household Owner">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="32.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="addButton" layoutX="200.0" layoutY="480.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="33.0" prefWidth="82.0" stylesheets="@../../styles/buttons.css" text="Save" textFill="WHITE" />
+      <Button fx:id="btnDiscard" layoutX="290.0" layoutY="480.0" mnemonicParsing="false" onAction="#btnDiscardOnAction" prefHeight="33.0" prefWidth="82.0" stylesheets="@../../styles/buttons.css" text="Discard" textFill="WHITE" />
+      <Text fx:id="lblComplaintId" layoutX="167.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C001">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbOwnerName" layoutX="31.0" layoutY="171.0" onAction="#cmbOwnerNameOnAction" prefHeight="43.0" prefWidth="345.0" />
+      <TextArea fx:id="textareaDescription" layoutX="30.0" layoutY="263.0" prefHeight="116.0" prefWidth="345.0" />
+      <Text layoutX="25.0" layoutY="410.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complaint Date">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="datePicker" layoutX="27.0" layoutY="425.0" prefHeight="42.0" prefWidth="345.0" />
+   </children>
+</AnchorPane>

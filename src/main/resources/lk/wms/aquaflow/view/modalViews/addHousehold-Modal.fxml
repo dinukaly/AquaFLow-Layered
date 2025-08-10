@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="577.0" prefWidth="406.0" stylesheets="@../../styles/modals.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.aquaFlow.controller.modal.AddHouseholdModalController">
+   <children>
+      <Text fx:id="titleLabel" layoutX="123.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Household">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="30.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Household Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="30.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="30.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="28.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Num: of members">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtOwnerName" layoutX="164.0" layoutY="139.0" prefHeight="43.0" prefWidth="214.0" />
+      <TextField fx:id="txtAddress" layoutX="167.0" layoutY="209.0" prefHeight="43.0" prefWidth="214.0" />
+      <TextField fx:id="txtNumOfMembers" layoutX="167.0" layoutY="281.0" prefHeight="43.0" prefWidth="214.0" />
+      <TextField fx:id="txtEmail" layoutX="167.0" layoutY="353.0" prefHeight="43.0" prefWidth="214.0" />
+      <Button fx:id="addButton" layoutX="210.0" layoutY="494.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="33.0" prefWidth="82.0" stylesheets="@../../styles/buttons.css" text="Save" textFill="WHITE" />
+      <Button fx:id="btnDiscard" layoutX="298.0" layoutY="494.0" mnemonicParsing="false" onAction="#btnDiscardOnAction" prefHeight="33.0" prefWidth="82.0" stylesheets="@../../styles/buttons.css" text="Discard" textFill="WHITE" />
+      <Text fx:id="lblHouseholdId" layoutX="167.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="H001">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="28.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Village Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbVillageName" layoutX="167.0" layoutY="423.0" onAction="#cmbVillageNameOnAction" prefHeight="43.0" prefWidth="214.0" />
+   </children>
+</AnchorPane>

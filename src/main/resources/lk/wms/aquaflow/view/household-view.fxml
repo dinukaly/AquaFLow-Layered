@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="childRoot" prefHeight="697.0" prefWidth="986.0" style="-fx-background-color: white;" stylesheets="@../styles/household.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.aquaFlow.controller.HouseholdController">
+    <children>
+        <HBox layoutX="10.0" layoutY="10.0" prefHeight="71.0" prefWidth="963.0" />
+        <Text fill="#363434" layoutX="78.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Household Management">
+            <font>
+                <Font name="Ebrima" size="17.0" />
+            </font>
+        </Text>
+        <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/icons8-menu-50.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="addButton" layoutX="711.0" layoutY="31.0" mnemonicParsing="false" onAction="#addHouseholdBtnOnAction" prefHeight="36.0" prefWidth="107.0" stylesheets="@../styles/buttons.css" text="+ Add New" textFill="WHITE" />
+        <Button fx:id="btnReports" layoutX="825.0" layoutY="31.0" mnemonicParsing="false" onAction="#btnReportsOnAction" prefHeight="36.0" prefWidth="107.0" stylesheets="@../styles/buttons.css" text="Reports" textFill="WHITE" />
+        <Text fill="#363434" layoutX="78.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All Households">
+            <font>
+                <Font name="Ebrima Bold" size="16.0" />
+            </font>
+        </Text>
+        <TextField fx:id="txtSearch" layoutX="808.0" layoutY="138.0" onAction="#txtSearchOnAction" prefHeight="36.0" prefWidth="126.0" promptText="Search" />
+        <ComboBox fx:id="cmbVillages" layoutX="652.0" layoutY="138.0" onAction="#cmbVillagesOnAction" prefHeight="36.0" prefWidth="149.0" promptText="Villages" />
+        <TableView fx:id="householdTableView" layoutX="73.0" layoutY="208.0" prefHeight="364.0" prefWidth="862.0" stylesheets="@../styles/table.css">
+            <columns>
+                <TableColumn fx:id="householdIdCol" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="ownerNameCol" prefWidth="125.0" text="Owner Name" />
+                <TableColumn fx:id="addressCol" prefWidth="127.0" text="Address" />
+                <TableColumn fx:id="noOfMemCol" prefWidth="99.0" text="No: Members" />
+                <TableColumn fx:id="emailCol" prefWidth="143.0" text="       Email" />
+                <TableColumn fx:id="villageCol" prefWidth="142.0" text="Village Name" />
+                <TableColumn fx:id="actionCol" prefWidth="151.0" text="Action" />
+            </columns>
+        </TableView>
+      <Button fx:id="viewConsumptionBtn" layoutX="771.0" layoutY="597.0" mnemonicParsing="false" onAction="#viewConsumptionPageBtn" prefHeight="36.0" prefWidth="164.0" text="View Consumptions" textFill="WHITE">
+         <stylesheets>
+            <URL value="@../styles/buttons.css" />
+            <URL value="@../styles/buttons.css" />
+         </stylesheets>
+      </Button>
+    </children>
+</AnchorPane>

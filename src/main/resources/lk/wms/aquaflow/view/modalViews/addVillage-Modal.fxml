@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="630.0" prefWidth="406.0" stylesheets="@../../styles/modals.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.aquaFlow.controller.modal.AddVillageModalController">
+   <children>
+      <Text fx:id="titleLabel" layoutX="133.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Village">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="31.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Village Id">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="30.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="30.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Population">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="28.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Requirement">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Area">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtName" layoutX="164.0" layoutY="139.0" prefHeight="43.0" prefWidth="214.0" />
+      <TextField fx:id="txtPopulation" layoutX="167.0" layoutY="209.0" prefHeight="43.0" prefWidth="214.0" />
+      <TextField fx:id="txtWaterRequirement" layoutX="167.0" layoutY="281.0" prefHeight="43.0" prefWidth="214.0" />
+      <TextField fx:id="txtArea" layoutX="167.0" layoutY="353.0" prefHeight="43.0" prefWidth="214.0" />
+      <Button fx:id="addButton" layoutX="211.0" layoutY="564.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="33.0" prefWidth="82.0" stylesheets="@../../styles/buttons.css" text="Save" textFill="WHITE" />
+      <Button fx:id="btnDiscard" layoutX="299.0" layoutY="564.0" mnemonicParsing="false" onAction="#btnDiscardOnAction" prefHeight="33.0" prefWidth="82.0" stylesheets="@../../styles/buttons.css" text="Discard" textFill="WHITE" />
+      <Text fx:id="lblVillageId" layoutX="167.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="V001">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="28.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="District">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbDistrict" layoutX="167.0" layoutY="423.0" prefHeight="43.0" prefWidth="214.0" promptText="Select District" />
+      <Text layoutX="28.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Officer Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbOfficerName" layoutX="167.0" layoutY="490.0" prefHeight="43.0" prefWidth="214.0" promptText="Select Officer" />
+   </children>
+</AnchorPane>

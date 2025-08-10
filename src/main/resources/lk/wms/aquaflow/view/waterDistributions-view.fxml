@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="childRoot" prefHeight="697.0" prefWidth="986.0" style="-fx-background-color: white;" stylesheets="@../styles/consumption.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.aquaFlow.controller.WaterDistributionController">
+   <children>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="71.0" prefWidth="963.0" />
+      <Text fill="#363434" layoutX="78.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Distribution Management">
+         <font>
+            <Font name="Ebrima" size="17.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-menu-50.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="consumptionByVillage" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="582.0" layoutX="34.0" layoutY="94.0" stroke="WHITE" strokeType="INSIDE" width="924.0" />
+      <Text fx:id="lblWaterSourceName" fill="#2382ee" layoutX="58.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All Distributions">
+         <font>
+            <Font name="Ebrima Bold" size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="addButton" layoutX="735.0" layoutY="23.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="36.0" prefWidth="107.0" stylesheets="@../styles/buttons.css" text="+ Add New" textFill="WHITE" />
+      <Button fx:id="btnReports" layoutX="851.0" layoutY="23.0" mnemonicParsing="false" onAction="#btnReportsOnAction" prefHeight="36.0" prefWidth="107.0" stylesheets="@../styles/buttons.css" text="Reports" textFill="WHITE" />
+      <Text fx:id="lblWaterSourceName1" layoutX="207.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule">
+         <font>
+            <Font name="Ebrima" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblWaterSourceName11" layoutX="300.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Completed">
+         <font>
+            <Font name="Ebrima" size="16.0" />
+         </font>
+      </Text>
+      <Line endX="24.0" layoutX="158.0" layoutY="142.0" startX="-100.0" stroke="#2382ee" />
+      
+      <!-- Placeholder text for future UI implementation -->
+      <Text fill="#363434" layoutX="350.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New UI plan will be implemented here">
+         <font>
+            <Font name="Ebrima" size="16.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

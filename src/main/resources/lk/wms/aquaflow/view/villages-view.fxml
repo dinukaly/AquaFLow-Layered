@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="childRoot" prefHeight="697.0" prefWidth="986.0" style="-fx-background-color: white;" stylesheets="@../styles/consumption.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.aquaFlow.controller.VillageController">
+   <children>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="71.0" prefWidth="963.0" />
+      <Text fill="#363434" layoutX="78.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Village Management">
+         <font>
+            <Font name="Ebrima" size="17.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-menu-50.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtSearch" layoutX="593.0" layoutY="23.0" onAction="#txtSearch" prefHeight="36.0" prefWidth="252.0" promptText="Search " />
+      <Button fx:id="addButton" layoutX="853.0" layoutY="23.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="36.0" prefWidth="107.0" stylesheets="@../styles/buttons.css" text="+ Add New" textFill="WHITE" />
+      <TableView fx:id="villageTableView" layoutX="67.0" layoutY="193.0" prefHeight="470.0" prefWidth="832.0" stylesheets="@../styles/table.css" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="87.0" AnchorPane.topAnchor="193.0">
+        <columns>
+          <TableColumn fx:id="villageIdCol" minWidth="0.0" prefWidth="96.0" text="Village Id" />
+            <TableColumn fx:id="villageNameCol" minWidth="0.0" prefWidth="100.0" text="Village Name" />
+            <TableColumn fx:id="populationCol" prefWidth="94.0" text="Population" />
+            <TableColumn fx:id="waterRequirementCol" prefWidth="153.0" text="Water Requirement" />
+            <TableColumn fx:id="areaCol" prefWidth="99.0" text="Area" />
+            <TableColumn fx:id="districtCol" prefWidth="99.0" text="District" />
+            <TableColumn fx:id="officerNameCol" prefWidth="111.0" text="Officer Name" />
+            <TableColumn fx:id="actionCol" prefWidth="104.0" text="Action" />
+        </columns>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="childRoot" prefHeight="697.0" prefWidth="986.0" style="-fx-background-color: white;" stylesheets="@../styles/inventory.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.aquaFlow.controller.BillingController">
+   <children>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="71.0" prefWidth="963.0" />
+      <Text fill="#363434" layoutX="78.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bill and Payment Management">
+         <font>
+            <Font name="Ebrima" size="17.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-menu-50.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="addButton" layoutX="650.0" layoutY="24.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="36.0" prefWidth="157.0" stylesheets="@../styles/buttons.css" text="+ Add Payment" textFill="WHITE" />
+      <Rectangle fx:id="allInventory" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="413.0" layoutX="29.0" layoutY="261.0" stroke="WHITE" strokeType="INSIDE" width="927.0" />
+      <Button fx:id="btnReports" layoutX="819.0" layoutY="24.0" mnemonicParsing="false" onAction="#btnReportOnAction" prefHeight="36.0" prefWidth="145.0" stylesheets="@../styles/buttons.css" text="Generate Bills" textFill="WHITE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="105.0" layoutX="30.0" layoutY="109.0" stroke="WHITE" strokeType="INSIDE" width="217.0" />
+      <Text fill="#9a9a9a" layoutX="49.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Billed This Month">
+         <font>
+            <Font name="Ebrima Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblTotalBilledThisMonth" fill="#363434" layoutX="51.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs. 1200000">
+         <font>
+            <Font name="Ebrima" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#90da46" layoutX="52.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For 120 Households">
+         <font>
+            <Font name="Ebrima" size="11.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="105.0" layoutX="266.0" layoutY="109.0" stroke="WHITE" strokeType="INSIDE" width="217.0" />
+      <Text fill="#9a9a9a" layoutX="287.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Collected">
+         <font>
+            <Font name="Ebrima Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblTotalCollected" fill="#363434" layoutX="289.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs. 20000">
+         <font>
+            <Font name="Ebrima" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#90da46" layoutX="290.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2% more than last month">
+         <font>
+            <Font name="Ebrima" size="11.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="105.0" layoutX="502.0" layoutY="109.0" stroke="WHITE" strokeType="INSIDE" width="217.0" />
+      <Text fill="#9a9a9a" layoutX="515.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Payments">
+         <font>
+            <Font name="Ebrima Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblPendingPayment" fill="#363434" layoutX="517.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50">
+         <font>
+            <Font name="Ebrima" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#d95848" layoutX="518.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3% from last month">
+         <font>
+            <Font name="Ebrima" size="11.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="105.0" layoutX="735.0" layoutY="109.0" stroke="WHITE" strokeType="INSIDE" width="217.0" />
+      <Text fill="#9a9a9a" layoutX="752.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Overdue Payments">
+         <font>
+            <Font name="Ebrima Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblOverduePayment" fill="#363434" layoutX="754.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+         <font>
+            <Font name="Ebrima" size="23.0" />
+         </font>
+      </Text>
+      <Text fill="#d95848" layoutX="755.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5 % from last month">
+         <font>
+            <Font name="Ebrima" size="11.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff79" height="36.0" layoutX="196.0" layoutY="126.0" stroke="#20b1c75c" strokeType="INSIDE" width="37.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#12cd1e78" height="36.0" layoutX="430.0" layoutY="123.0" stroke="#12cd1e5c" strokeType="INSIDE" width="37.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1870a78" height="36.0" layoutX="666.0" layoutY="123.0" stroke="#e1870a5c" strokeType="INSIDE" width="37.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8140563" height="36.0" layoutX="897.0" layoutY="123.0" stroke="#f0322427" strokeType="INSIDE" width="37.0" />
+      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="201.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-bill-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="435.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-tiles-24.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="671.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-alarm-50.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="27.0" layoutX="906.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-cancel-50.png" />
+         </image>
+      </ImageView>
+      <Line endX="-26.0" layoutX="156.0" layoutY="313.0" startX="-100.0" stroke="#2484f2" />
+      <Button fx:id="btnAllBills" layoutX="41.0" layoutY="270.0" mnemonicParsing="false" onAction="#btnAllBillsOnAction" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: white;" stylesheets="@../styles/buttons.css" text="All Bills" textFill="#1b8bd0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPaid" layoutX="132.0" layoutY="271.0" mnemonicParsing="false" onAction="#btnPaidOnAction" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: white;" stylesheets="@../styles/buttons.css" text="Paid">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPending" layoutX="213.0" layoutY="271.0" mnemonicParsing="false" onAction="#btnPendingOnAction" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: white;" stylesheets="@../styles/buttons.css" text="Pending">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnOverDue" layoutX="311.0" layoutY="271.0" mnemonicParsing="false" onAction="#btnOverdueOnAction" prefHeight="36.0" prefWidth="107.0" style="-fx-background-color: white;" stylesheets="@../styles/buttons.css" text="Overdue">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="billingTBV" layoutX="39.0" layoutY="326.0" prefHeight="337.0" prefWidth="910.0" stylesheets="@../styles/table.css">
+        <columns>
+          <TableColumn fx:id="billNoCol" text="Bill No." />
+          <TableColumn fx:id="householdCol" prefWidth="101.0" text="Household" />
+            <TableColumn fx:id="villageCol" prefWidth="121.0" text="Village" />
+            <TableColumn fx:id="billingDateCol" prefWidth="115.0" text="Billing Date" />
+            <TableColumn fx:id="amountCol" prefWidth="104.0" text="Amount (Rs.)" />
+            <TableColumn fx:id="statusCol" prefWidth="90.0" text="Status" />
+            <TableColumn fx:id="actionsCol" prefWidth="297.0" text="Actions" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

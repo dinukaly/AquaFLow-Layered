@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="childRoot" prefHeight="697.0" prefWidth="986.0" style="-fx-background-color: white;" stylesheets="@../styles/waterSource.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.aquaFlow.controller.WaterSourcesController">
+   <children>
+      <HBox layoutX="10.0" layoutY="10.0" prefHeight="71.0" prefWidth="963.0" />
+      <Text fill="#363434" layoutX="78.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Source Management">
+         <font>
+            <Font name="Ebrima" size="17.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-menu-50.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="cmbDistrict" layoutX="674.0" layoutY="30.0" onAction="#cmbDistrictOnAction" prefHeight="27.0" prefWidth="135.0" promptText="District" />
+      <TextField fx:id="txtSearch" layoutX="814.0" layoutY="30.0" onAction="#txtSearch" prefHeight="27.0" prefWidth="135.0" promptText="Search " />
+      <Button fx:id="addButton" layoutX="843.0" layoutY="641.0" mnemonicParsing="false" onAction="#addWaterSourceBtnOnAction" prefHeight="36.0" prefWidth="107.0" stylesheets="@../styles/buttons.css" text="+ Add New" textFill="WHITE" />
+      <TableView fx:id="waterSourceTBV" layoutX="58.0" layoutY="348.0" prefHeight="282.0" prefWidth="896.0">
+        <columns>
+          <TableColumn fx:id="sourceNameCol" prefWidth="165.0" text="Source Name" />
+          <TableColumn fx:id="sourceTypeCol" prefWidth="153.0" text="Type" />
+            <TableColumn fx:id="villageCol" prefWidth="234.0" text="Village" />
+            <TableColumn fx:id="statusCol" prefWidth="162.0" text="Status" />
+            <TableColumn fx:id="actionsCol" prefWidth="181.0" text="Actions" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
