@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="waterDistributionReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5882f402-ebe7-48d1-bd7f-fe4d1501d455">
+    <property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (11)"/>
+    <queryString language="SQL">
+        <![CDATA[select * from water_distribution;]]>
+    </queryString>
+    <field name="distribution_id" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="distribution_id"/>
+        <property name="com.jaspersoft.studio.field.label" value="distribution_id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="water_distribution"/>
+    </field>
+    <field name="total_allocation" class="java.math.BigDecimal">
+        <property name="com.jaspersoft.studio.field.name" value="total_allocation"/>
+        <property name="com.jaspersoft.studio.field.label" value="total_allocation"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="water_distribution"/>
+    </field>
+    <field name="status" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="status"/>
+        <property name="com.jaspersoft.studio.field.label" value="status"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="water_distribution"/>
+    </field>
+    <field name="used_amount" class="java.math.BigDecimal">
+        <property name="com.jaspersoft.studio.field.name" value="used_amount"/>
+        <property name="com.jaspersoft.studio.field.label" value="used_amount"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="water_distribution"/>
+    </field>
+    <field name="distribution_date" class="java.sql.Date">
+        <property name="com.jaspersoft.studio.field.name" value="distribution_date"/>
+        <property name="com.jaspersoft.studio.field.label" value="distribution_date"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="water_distribution"/>
+    </field>
+    <field name="village_id" class="java.lang.String">
+        <property name="com.jaspersoft.studio.field.name" value="village_id"/>
+        <property name="com.jaspersoft.studio.field.label" value="village_id"/>
+        <property name="com.jaspersoft.studio.field.tree.path" value="water_distribution"/>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch">
+            <staticText>
+                <reportElement x="80" y="19" width="400" height="51" uuid="00d614d7-2dde-4b8b-af82-a8f102e4bd5b"/>
+                <textElement textAlignment="Center">
+                    <font size="29" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Water Distribution Report]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="118" y="57" width="317" height="22" uuid="5d928567-9aae-4f3d-bc7d-bc39b2b3b139"/>
+                <textElement textAlignment="Center">
+                    <font size="13"/>
+                </textElement>
+                <text><![CDATA[National Water and Dranaige Management System]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="29" splitType="Stretch">
+            <line>
+                <reportElement x="-10" y="10" width="572" height="1" uuid="adf3cb74-7868-4262-b75d-f8bda3505d7b"/>
+            </line>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="70" splitType="Stretch">
+            <staticText>
+                <reportElement x="-7" y="20" width="80" height="30" uuid="a445539e-ead0-4216-8352-fc12ab6ddd1d"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Distribution Id]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="86" y="20" width="100" height="30" uuid="72b1759f-d904-4142-a60a-84f5a59d2142">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fc7f7780-e892-4bdb-bed1-6c4d9cbece20"/>
+                </reportElement>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[total_allocation]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="199" y="20" width="81" height="30" uuid="51778439-66f0-4e9b-8706-b8ddfd8beb48">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="759515f3-0a9d-4a18-9da6-fcf12b8d3c6e"/>
+                </reportElement>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[status]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="285" y="20" width="90" height="30" uuid="42780f13-bfef-41cb-8968-711f15a0fc74">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="94da3e33-7c75-4bc1-9f20-f9654c952be1"/>
+                </reportElement>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[used_amount]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="388" y="20" width="100" height="30" uuid="8d303474-8b09-42be-a91c-5ef3b22442cc">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e3607f31-699f-4ea3-a39c-93dff3de32d3"/>
+                </reportElement>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[distribution_date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="498" y="20" width="64" height="30" uuid="cf6fe6a8-5cdc-4f69-99fc-2429db12e52e">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d17ab461-a4fb-45e7-89dd-9c59c57c33ff"/>
+                </reportElement>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[village_id]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="125" splitType="Stretch">
+            <textField>
+                <reportElement x="-5" y="0" width="85" height="30" uuid="56e268f5-384a-48a6-8dfa-1d1b234c408a"/>
+                <textFieldExpression><![CDATA[$F{distribution_id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="87" y="0" width="100" height="30" uuid="00771bec-d19a-4456-86df-e19e3fda4d3a">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fc7f7780-e892-4bdb-bed1-6c4d9cbece20"/>
+                </reportElement>
+                <textFieldExpression><![CDATA[$F{total_allocation}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="198" y="0" width="80" height="30" uuid="7d2eedf0-7ce0-483d-b413-21cbd50acf99">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="759515f3-0a9d-4a18-9da6-fcf12b8d3c6e"/>
+                </reportElement>
+                <textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="286" y="0" width="89" height="30" uuid="6912b5eb-7c44-455c-8800-538cb974f860">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="94da3e33-7c75-4bc1-9f20-f9654c952be1"/>
+                </reportElement>
+                <textFieldExpression><![CDATA[$F{used_amount}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="389" y="0" width="100" height="30" uuid="7d656ee2-53ef-446c-93d9-d83c5238c969">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e3607f31-699f-4ea3-a39c-93dff3de32d3"/>
+                </reportElement>
+                <textFieldExpression><![CDATA[$F{distribution_date}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="500" y="0" width="70" height="30" uuid="2dab94c5-8121-49c7-837c-1f2809ab36d5">
+                    <property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d17ab461-a4fb-45e7-89dd-9c59c57c33ff"/>
+                </reportElement>
+                <textFieldExpression><![CDATA[$F{village_id}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

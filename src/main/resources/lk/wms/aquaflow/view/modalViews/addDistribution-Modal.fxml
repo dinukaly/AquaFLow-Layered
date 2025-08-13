@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="549.0" prefWidth="406.0" stylesheets="@../../styles/modals.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.aquaFlow.controller.modal.AddDistributionModalController">
+<AnchorPane prefHeight="549.0" prefWidth="406.0" stylesheets="@../../styles/modals.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.wms.aquaflow.controller.modal.AddDistributionModalController">
    <children>
       <Text fx:id="titleLabel" layoutX="121.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Distribution">
          <font>

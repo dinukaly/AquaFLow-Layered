@@ -1,0 +1,102 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="household" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ef0d2815-d1f6-44cc-8fe7-1a6e1cc8feff">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<query language="SQL"><![CDATA[SELECT h.house_id, h.owner_name, h.address, h.no_of_members, h.email, v.village_name
+FROM household h
+LEFT JOIN village v ON h.village_id = v.village_id]]></query>
+	<field name="owner_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="owner_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="owner_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="household"/>
+	</field>
+	<field name="address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="address"/>
+		<property name="com.jaspersoft.studio.field.label" value="address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="household"/>
+	</field>
+	<field name="no_of_members" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="no_of_members"/>
+		<property name="com.jaspersoft.studio.field.label" value="no_of_members"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="household"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="email"/>
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="household"/>
+	</field>
+	<field name="village_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="village_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="village_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="village"/>
+	</field>
+	<field name="house_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="house_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="house_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="household"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="4e9ea10b-391c-4f66-8513-f219a3baa2a5" x="0" y="20" width="550" height="50" fontSize="24.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Household Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="34" splitType="Stretch">
+		<element kind="staticText" uuid="7bcca925-6bdf-44c7-92a0-89125d71ebda" x="0" y="0" width="95" height="30">
+			<text><![CDATA[Owner Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8f39da8e-d78e-40d4-a231-2d8134a7185b"/>
+		</element>
+		<element kind="staticText" uuid="d5229991-b2ab-4c28-a096-da6e6554276f" x="95" y="0" width="92" height="30">
+			<text><![CDATA[Address]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b1ceaab1-283e-465d-90b0-e3d70385ff03"/>
+		</element>
+		<element kind="staticText" uuid="2fa20fc9-e6af-43d6-8f3c-4638514be508" x="187" y="0" width="92" height="30">
+			<text><![CDATA[no_of_members]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="960236fd-1158-4a16-a791-64dd8099c07a"/>
+		</element>
+		<element kind="staticText" uuid="53b97f3c-6f53-43bc-9166-5d1ecdf607b3" x="279" y="0" width="92" height="30">
+			<text><![CDATA[Email]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="56910625-2f8d-43a3-9aa1-9b48bd77c824"/>
+		</element>
+		<element kind="staticText" uuid="e61fdfc9-655b-4726-acf2-ec15b27383ee" x="371" y="0" width="92" height="30">
+			<text><![CDATA[Village name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="afddc840-2c31-439a-9f8d-0d9cabf2fd55"/>
+		</element>
+		<element kind="staticText" uuid="a6c2b156-3328-4efb-a592-be055c11e3b3" x="463" y="0" width="92" height="30">
+			<text><![CDATA[House ID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5231919c-c177-46f7-a5be-05f047bfae99"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<element kind="textField" uuid="995c43e5-906a-49bf-9c3e-fe60b79e324c" x="0" y="0" width="95" height="30">
+				<expression><![CDATA[$F{owner_name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8f39da8e-d78e-40d4-a231-2d8134a7185b"/>
+			</element>
+			<element kind="textField" uuid="395ff139-3fbe-4286-a2cb-6b053eafdad0" x="95" y="0" width="92" height="30">
+				<expression><![CDATA[$F{address}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b1ceaab1-283e-465d-90b0-e3d70385ff03"/>
+			</element>
+			<element kind="textField" uuid="61bddeb2-1e80-40b2-b940-da967863bb33" x="187" y="0" width="92" height="30">
+				<expression><![CDATA[$F{no_of_members}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="960236fd-1158-4a16-a791-64dd8099c07a"/>
+			</element>
+			<element kind="textField" uuid="d1180db0-04bf-4ebd-9e9a-ae990bb3397a" x="279" y="0" width="92" height="30">
+				<expression><![CDATA[$F{email}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="56910625-2f8d-43a3-9aa1-9b48bd77c824"/>
+			</element>
+			<element kind="textField" uuid="15dcb5c7-5d27-4e73-8324-6a6c5d379831" x="371" y="0" width="92" height="30">
+				<expression><![CDATA[$F{village_name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="afddc840-2c31-439a-9f8d-0d9cabf2fd55"/>
+			</element>
+			<element kind="textField" uuid="13e45daf-d8e4-494c-b2c4-fd0bfe9fed63" x="463" y="0" width="92" height="30">
+				<expression><![CDATA[$F{house_id}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5231919c-c177-46f7-a5be-05f047bfae99"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

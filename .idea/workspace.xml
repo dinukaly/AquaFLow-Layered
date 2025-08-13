@@ -4,11 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c31b8884-fb4f-441f-8821-e0639ad16b55" name="Changes" comment="" />
+    <list default="true" id="c31b8884-fb4f-441f-8821-e0639ad16b55" name="Changes" comment="all assets files added">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/AdminDashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/BillingsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/ComplaintsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/ConsumptionsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/HouseholdController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/InventoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/MaintenanceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/OfficerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/OperatorDashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/VendorsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/VillageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/WaterAllocationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/WaterDistributionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/WaterSourcesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/controller/modal/AddBillModalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/reports/distribution.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/reports/household.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/wms/aquaflow/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/billings-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/billings-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/complaints-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/complaints-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/consumptions-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/consumptions-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/dashboard-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/household-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/household-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/inventories-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/inventories-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/maintenance-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/maintenance-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/modalViews/addBill-Modal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/modalViews/addBill-Modal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/officers-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/officers-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/operatorDashboard-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/operatorDashboard-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/vendors-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/vendors-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/villages-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/villages-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/waterAllocations-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/waterAllocations-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/waterDistributions-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/waterDistributions-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/waterSources-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lk/wms/aquaflow/view/waterSources-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,7 +70,9 @@
   "associatedIndex": 1
 }]]></component>
   <component name="ProjectId" id="316fAoOyGV15A78QbVR3lQlzIdz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,7 +80,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -53,11 +106,59 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754849307298</updated>
-      <workItem from="1754849308639" duration="9000" />
+      <workItem from="1754849308639" duration="4763000" />
     </task>
+    <task id="LOCAL-00001" summary="project initialized">
+      <option name="closed" value="true" />
+      <created>1754850786587</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1754850786587</updated>
+    </task>
+    <task id="LOCAL-00002" summary="project initialized">
+      <option name="closed" value="true" />
+      <created>1754850921833</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1754850921833</updated>
+    </task>
+    <task id="LOCAL-00003" summary="all view files added">
+      <option name="closed" value="true" />
+      <created>1754851779513</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1754851779513</updated>
+    </task>
+    <task id="LOCAL-00004" summary="all css files added">
+      <option name="closed" value="true" />
+      <created>1754852068918</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1754852068918</updated>
+    </task>
+    <task id="LOCAL-00005" summary="all assets files added">
+      <option name="closed" value="true" />
+      <created>1754852530286</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1754852530286</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="project initialized" />
+    <MESSAGE value="all view files added" />
+    <MESSAGE value="all css files added" />
+    <MESSAGE value="all assets files added" />
+    <option name="LAST_COMMIT_MESSAGE" value="all assets files added" />
   </component>
 </project>
