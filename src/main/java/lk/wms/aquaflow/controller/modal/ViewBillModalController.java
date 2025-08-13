@@ -7,5 +7,6 @@ public class ViewBillModalController {
     }
 
     public void handleClose(ActionEvent actionEvent) {
+
     }
 }
