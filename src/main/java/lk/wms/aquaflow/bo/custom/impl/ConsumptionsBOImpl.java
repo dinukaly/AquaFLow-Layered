@@ -3,7 +3,9 @@ package lk.wms.aquaflow.bo.custom.impl;
 import lk.wms.aquaflow.bo.custom.ConsumptionsBO;
 import lk.wms.aquaflow.dto.ConsumptionDTO;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class ConsumptionsBOImpl implements ConsumptionsBO {
     @Override
@@ -37,7 +39,32 @@ public class ConsumptionsBOImpl implements ConsumptionsBO {
     }
 
     @Override
-    public List<ConsumptionDTO> getAllConsumptions() {
-        return List.of();
+    public ConsumptionDTO getPreviousConsumption(String houseId, String endDate) {
+        return null;
+    }
+
+    @Override
+    public ConsumptionDTO getConsumptionById(String consumptionId) {
+        return null;
+    }
+
+    @Override
+    public Map<String, Number> getMonthlyConsumptionForYear(String year) {
+        return Map.of();
+    }
+
+    @Override
+    public Map<String, Number> getConsumptionByVillageForYear(String year) {
+        return Map.of();
+    }
+
+    @Override
+    public ArrayList<ConsumptionDTO> getAllConsumptions() {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public String getHouseholdIdFromBill(String billId) {
+        return "";
     }
 }
