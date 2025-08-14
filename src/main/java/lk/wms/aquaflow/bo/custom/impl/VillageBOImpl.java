@@ -50,4 +50,9 @@ public class VillageBOImpl implements VillageBO {
     public List<VillageDTO> getAllVillages() {
         return List.of();
     }
+
+    @Override
+    public List<VillageDTO> getVillageIdAndName() {
+        return List.of();
+    }
 }
