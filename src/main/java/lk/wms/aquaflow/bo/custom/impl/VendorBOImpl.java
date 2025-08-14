@@ -37,6 +37,11 @@ public class VendorBOImpl implements VendorBO {
     }
 
     @Override
+    public String getSupplierIdByName(String supplierName) {
+        return "";
+    }
+
+    @Override
     public List<SupplierDTO> getAllVendors() {
         return List.of();
     }
