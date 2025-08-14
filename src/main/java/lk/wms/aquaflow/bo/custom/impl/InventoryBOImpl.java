@@ -37,6 +37,11 @@ public class InventoryBOImpl implements InventoryBO {
     }
 
     @Override
+    public InventoryDTO getInventoryById(String inventoryId) {
+        return null;
+    }
+
+    @Override
     public List<InventoryDTO> getAllInventories() {
         return List.of();
     }
