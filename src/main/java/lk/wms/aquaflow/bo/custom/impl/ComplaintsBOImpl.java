@@ -1,40 +1,70 @@
 package lk.wms.aquaflow.bo.custom.impl;
 
 import lk.wms.aquaflow.bo.custom.ComplaintsBO;
+import lk.wms.aquaflow.dao.DAOFactory;
+import lk.wms.aquaflow.dao.QueryDAO;
+import lk.wms.aquaflow.dao.custom.ComplaintDAO;
 import lk.wms.aquaflow.dto.ComplaintDTO;
+import lk.wms.aquaflow.dto.custom.ComplaintsWithOwnerEmailDTO;
+import lk.wms.aquaflow.entity.Complaint;
+import lk.wms.aquaflow.entity.custom.ComplaintWithOwnerEmail;
 
+import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ComplaintsBOImpl implements ComplaintsBO {
+    private final ComplaintDAO complaintDAO = (ComplaintDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.COMPLAINTS);
+    private final QueryDAO queryDAO = (QueryDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.QUERY);
 
     @Override
-    public String getNextComplaintId() {
-        return "";
+    public String getNextComplaintId() throws SQLException, ClassNotFoundException {
+        return complaintDAO.generateNewId();
     }
 
     @Override
-    public boolean addComplaint(ComplaintDTO complaintDTO) {
-        return false;
+    public boolean addComplaint(ComplaintDTO complaintDTO) throws SQLException, ClassNotFoundException {
+        return complaintDAO.add(new Complaint(
+                complaintDTO.getComplaintId(),
+                Date.valueOf(complaintDTO.getDate()),
+                complaintDTO.getDescription(),
+                complaintDTO.getStatus(),
+                complaintDTO.getHouseId()
+        ));
     }
 
     @Override
-    public boolean updateComplaint(ComplaintDTO complaintDTO) {
-        return false;
+    public boolean updateComplaint(ComplaintDTO complaintDTO) throws SQLException, ClassNotFoundException {
+        return complaintDAO.update(new Complaint(
+                complaintDTO.getComplaintId(),
+                Date.valueOf(complaintDTO.getDate()),
+                complaintDTO.getDescription(),
+                complaintDTO.getStatus(),
+                complaintDTO.getHouseId()
+        ));
     }
 
     @Override
-    public boolean deleteComplaint(String complaintId) {
-        return false;
+    public boolean deleteComplaint(String complaintId) throws SQLException, ClassNotFoundException {
+        return complaintDAO.delete(complaintId);
     }
 
     @Override
     public boolean updateComplaintStatus(String complaintId, String status) {
-        return false;
+        return complaintDAO.updateComplaintStatus(complaintId, status);
     }
 
     @Override
-    public ComplaintDTO getComplaintById(String complaintId) {
-        return null;
+    public ComplaintsWithOwnerEmailDTO getComplaintById(String complaintId) throws SQLException, ClassNotFoundException {
+        ComplaintWithOwnerEmail complaint = queryDAO.getComplaintById(complaintId);
+        return new ComplaintsWithOwnerEmailDTO(
+                complaint.getComplaintId(),
+                complaint.getDate().toString(),
+                complaint.getDescription(),
+                complaint.getStatus(),
+                complaint.getHouseId(),
+                complaint.getOwnerEmail()
+        );
     }
 
     @Override
@@ -43,22 +73,39 @@ public class ComplaintsBOImpl implements ComplaintsBO {
     }
 
     @Override
+    public ArrayList<ComplaintsWithOwnerEmailDTO> getRecentComplaints() throws SQLException, ClassNotFoundException {
+        ArrayList<ComplaintWithOwnerEmail> complaints = queryDAO.getRecentComplaints();
+        ArrayList<ComplaintsWithOwnerEmailDTO> complaintsWithOwnerEmailDTOS = new ArrayList<>();
+        for (ComplaintWithOwnerEmail complaint : complaints) {
+            complaintsWithOwnerEmailDTOS.add(new ComplaintsWithOwnerEmailDTO(
+                    complaint.getComplaintId(),
+                    complaint.getDate().toString(),
+                    complaint.getDescription(),
+                    complaint.getStatus(),
+                    complaint.getHouseId(),
+                    complaint.getOwnerEmail()
+            ));
+        }
+        return complaintsWithOwnerEmailDTOS;
+    }
+
+    @Override
     public int getTotalComplaintsCount() {
-        return 0;
+        return complaintDAO.getTotalComplaintsCount();
     }
 
     @Override
     public int getSolvedComplaintsCount() {
-        return 0;
+        return complaintDAO.getSolvedComplaintsCount();
     }
 
     @Override
     public int getScheduledComplaintsCount() {
-        return 0;
+        return complaintDAO.getScheduledComplaintsCount();
     }
 
     @Override
     public int getNewComplaintsThisMonth() {
-        return 0;
+        return complaintDAO.getNewComplaintsThisMonth();
     }
 }
