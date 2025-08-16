@@ -30,11 +30,14 @@
       <Button fx:id="addButton" layoutX="843.0" layoutY="641.0" mnemonicParsing="false" onAction="#addWaterSourceBtnOnAction" prefHeight="36.0" prefWidth="107.0" stylesheets="@../styles/buttons.css" text="+ Add New" textFill="WHITE" />
       <TableView fx:id="waterSourceTBV" layoutX="58.0" layoutY="348.0" prefHeight="282.0" prefWidth="896.0">
         <columns>
-          <TableColumn fx:id="sourceNameCol" prefWidth="165.0" text="Source Name" />
-          <TableColumn fx:id="sourceTypeCol" prefWidth="153.0" text="Type" />
-            <TableColumn fx:id="villageCol" prefWidth="234.0" text="Village" />
-            <TableColumn fx:id="statusCol" prefWidth="162.0" text="Status" />
-            <TableColumn fx:id="actionsCol" prefWidth="181.0" text="Actions" />
+          <TableColumn fx:id="watersourceIdCol" prefWidth="120.0" text="Water Source ID" />
+          <TableColumn fx:id="sourceNameCol" prefWidth="120.0" text="Source Name" />
+          <TableColumn fx:id="sourceTypeCol" prefWidth="100.0" text="Type" />
+            <TableColumn fx:id="locationCol" prefWidth="120.0" text="Location" />
+            <TableColumn fx:id="capacityCol" prefWidth="100.0" text="Capacity" />
+            <TableColumn fx:id="remainingCapacityCol" prefWidth="150.0" text="Remaining Capacity" />
+            <TableColumn fx:id="statusCol" prefWidth="100.0" text="Status" />
+            <TableColumn fx:id="actionsCol" prefWidth="100.0" text="Actions" />
         </columns>
       </TableView>
    </children>
