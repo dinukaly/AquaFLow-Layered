@@ -19,7 +19,4 @@ public class BillDTO {
     private String dueDate;
     private String consumptionId;
 
-    // Additional fields for UI display (not in database)
-    private String householdName;
-    private String villageName;
 }

@@ -9,15 +9,15 @@ import java.sql.Date;
 
 @Data
 @NoArgsConstructor
-
 @AllArgsConstructor
 public class Bill {
-    private String billId;
-    private BigDecimal totalAmountOfUnits;
-    private BigDecimal costPerUnit;
-    private String status;
-    private BigDecimal totalCost;
-    private Date billDate;
-    private Date dueDate;
-    private String consumptionId; // FK
-}
+
+        private String billId;
+        private double totalAmountOfUnits;  // Changed to double
+        private double costPerUnit;         // Changed to double
+        private String status;
+        private double totalCost;           // Changed to double
+        private Date billDate;              // Changed to Date
+        private Date dueDate;               // Changed to Date
+        private String consumptionId;
+    }

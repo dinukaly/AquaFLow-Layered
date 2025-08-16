@@ -13,7 +13,7 @@ import java.sql.Date;
 public class Payment {
     private String paymentId;
     private Date paidDate;
-    private BigDecimal amount;
+    private double amount;
     private String paymentMethod;
     private String billId; // FK
 }

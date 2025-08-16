@@ -21,18 +21,19 @@ import lk.wms.aquaflow.bo.custom.BOFactory;
 import lk.wms.aquaflow.bo.custom.BillingBO;
 import lk.wms.aquaflow.controller.modal.AddPaymentModalController;
 import lk.wms.aquaflow.controller.modal.ViewBillModalController;
-import lk.wms.aquaflow.dto.BillDTO;
+import lk.wms.aquaflow.dto.custom.CustomBillDTO;
 import lk.wms.aquaflow.util.AlertUtil;
 import lk.wms.aquaflow.view.tm.BillTM;
 
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
+import java.sql.Date;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -70,7 +71,6 @@ public class BillingsController implements Initializable {
     @FXML
     public TableColumn<BillTM, String> actionsCol;
 
-    //private final BillModel billModel = new BillModel();
     private final BillingBO billingBO = (BillingBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.BILLING);
     private ObservableList<BillTM> billTMList = FXCollections.observableArrayList();
     private final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(new Locale("en", "LK"));
@@ -98,7 +98,6 @@ public class BillingsController implements Initializable {
         amountCol.setCellValueFactory(new PropertyValueFactory<>("amount"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        // Style the status column
         statusCol.setCellFactory(column -> new TableCell<>() {
             @Override
             protected void updateItem(String item, boolean empty) {
@@ -126,7 +125,6 @@ public class BillingsController implements Initializable {
             }
         });
 
-        // Set up action column with dynamic buttons
         setupActionColumn();
     }
 
@@ -160,7 +158,6 @@ public class BillingsController implements Initializable {
                 } else {
                     BillTM bill = getTableView().getItems().get(getIndex());
 
-                    // Check if bill is overdue
                     if ("Overdue".equals(bill.getStatus())) {
                         if (!buttonsBox.getChildren().contains(reminderButton)) {
                             buttonsBox.getChildren().add(reminderButton);
@@ -189,7 +186,7 @@ public class BillingsController implements Initializable {
 
     private void loadAllBills() {
         try {
-            ArrayList<BillDTO> billList = billingBO.getAllBills();
+            ArrayList<CustomBillDTO> billList = billingBO.getAllBills();
             populateBillTable(billList);
         } catch (Exception e) {
             e.printStackTrace();
@@ -199,7 +196,7 @@ public class BillingsController implements Initializable {
 
     private void loadBillsByStatus(String status) {
         try {
-            ArrayList<BillDTO> billList = billingBO.getBillsByStatus(status);
+            List<CustomBillDTO> billList = billingBO.getBillsByStatus(status);
             populateBillTable(billList);
         } catch (Exception e) {
             e.printStackTrace();
@@ -209,7 +206,7 @@ public class BillingsController implements Initializable {
 
     private void loadOverdueBills() {
         try {
-            ArrayList<BillDTO> billList = billingBO.getOverdueBills();
+            List<CustomBillDTO> billList = billingBO.getOverdueBills();
             populateBillTable(billList);
         } catch (Exception e) {
             e.printStackTrace();
@@ -217,19 +214,18 @@ public class BillingsController implements Initializable {
         }
     }
 
-    private void populateBillTable(ArrayList<BillDTO> billList) {
+    private void populateBillTable(List<CustomBillDTO> billList) {
         billTMList.clear();
 
-        for (BillDTO dto : billList) {
+        for (CustomBillDTO dto : billList) {
             String status = dto.getStatus();
-
 
             if ("Unpaid".equals(status)) {
                 try {
-                    LocalDate dueDate = LocalDate.parse(dto.getDueDate());
+                    Date dueDate = Date.valueOf(dto.getDueDate());
                     LocalDate today = LocalDate.now();
 
-                    if (today.isAfter(dueDate)) {
+                    if (today.isAfter(dueDate.toLocalDate())) {
                         status = "Overdue";
                     }
                 } catch (Exception e) {
@@ -237,10 +233,7 @@ public class BillingsController implements Initializable {
                 }
             }
 
-
-            String formattedDate = formatDate(dto.getBillDate());
-
-
+            String formattedDate = formatDate(LocalDate.parse(dto.getBillDate()));
             String formattedAmount = formatCurrency(Double.parseDouble(dto.getTotalCost()));
 
             BillTM tm = new BillTM(
@@ -283,7 +276,7 @@ public class BillingsController implements Initializable {
 
     private void openBillViewModal(String billId) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/viewBill-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/viewBill-Modal.fxml"));
             AnchorPane modalPane = loader.load();
 
             ViewBillModalController controller = loader.getController();
@@ -319,13 +312,13 @@ public class BillingsController implements Initializable {
     public void addButtonOnAction(ActionEvent actionEvent) {
         try {
 
-            ArrayList<BillDTO> unpaidBills = billingBO.getBillsByStatus("Unpaid");
+            List<CustomBillDTO> unpaidBills = billingBO.getBillsByStatus("Unpaid");
             if (unpaidBills.isEmpty()) {
                 AlertUtil.showInfo("No unpaid bills available");
                 return;
             }
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addPayment-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addPayment-Modal.fxml"));
             AnchorPane root = loader.load();
 
             AddPaymentModalController controller = loader.getController();
@@ -346,7 +339,6 @@ public class BillingsController implements Initializable {
 
     @FXML
     public void btnReportOnAction(ActionEvent actionEvent) {
-        // Generate bills for eligible consumptions
         generateBillsForEligibleConsumptions();
         loadAllBills();
         updateSummaryStatistics();
@@ -378,23 +370,19 @@ public class BillingsController implements Initializable {
     }
 
     private void setActiveButton(Button activeButton) {
-        // Reset all buttons
         btnAllBills.setStyle("-fx-background-color: #f8f9fa; -fx-text-fill: #212529;");
         btnPaid.setStyle("-fx-background-color: #f8f9fa; -fx-text-fill: #212529;");
         btnPending.setStyle("-fx-background-color: #f8f9fa; -fx-text-fill: #212529;");
         btnOverDue.setStyle("-fx-background-color: #f8f9fa; -fx-text-fill: #212529;");
 
-        // Set active button style
         activeButton.setStyle("-fx-background-color: #007bff; -fx-text-fill: white;");
     }
 
-    private String formatDate(String dateStr) {
-        try {
-            LocalDate date = LocalDate.parse(dateStr);
-            return date.format(DateTimeFormatter.ofPattern("dd MMM yyyy"));
-        } catch (Exception e) {
-            return dateStr;
+    private String formatDate(LocalDate date) {
+        if (date == null) {
+            return "";
         }
+        return date.format(DateTimeFormatter.ofPattern("dd MMM yyyy"));
     }
 
     private String formatCurrency(double amount) {
