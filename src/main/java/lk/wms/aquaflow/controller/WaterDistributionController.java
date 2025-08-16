@@ -28,7 +28,7 @@ public class WaterDistributionController {
 
     public void addButtonOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addDistribution-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addDistribution-Modal.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddDistributionModalController controller = loader.getController();
