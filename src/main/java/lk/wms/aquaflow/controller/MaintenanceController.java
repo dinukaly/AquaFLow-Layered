@@ -81,7 +81,7 @@ public class MaintenanceController implements Initializable {
     }
     public void addButtonOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addMaintenance-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addMaintenance-Modal.fxml"));
             AnchorPane pane = loader.load();
 
             Stage stage = new Stage();
