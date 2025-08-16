@@ -1,4 +1,4 @@
-# AquaFlow: Water Management System
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f541b245-6e25-4bec-980e-f9857da4dc68" /># AquaFlow: Water Management System
 
 AquaFlow is a comprehensive water management system developed using JavaFX. This project aims to provide an efficient and user-friendly platform for managing water resources, monitoring usage, and optimizing distribution within a given environment.
 
@@ -31,9 +31,19 @@ AquaFlow is a comprehensive water management system developed using JavaFX. This
 4. Build and run the application.
 
 ## Screenshots
-*Screenshots of the application will be added here.*
+![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(24).png?raw=true)
+![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(20).png?raw=true)
+![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(16).png?raw=true)
+![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(23).png?raw=true)
+![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(26).png?raw=true)
+![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(14).png?raw=true)
+![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(27).png?raw=true)
+![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(14).png?raw=true)
+![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(30).png?raw=true)
+![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(28).png?raw=true)
 
 ## How to Use
+
 - Log in with your credentials.
 - Navigate through the dashboard to access different modules.
 - Monitor water usage, generate reports, and manage resources as needed.
