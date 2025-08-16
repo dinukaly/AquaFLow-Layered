@@ -17,18 +17,18 @@ public class VillageDTO {
     private double area;
     private String district;
     private String officerId;
-    private String officerName;
+    //private String officerName;
 
-    public VillageDTO(String villageId, String villageName, int population, double waterRequirement, double area, String district, String officerId) {
-        this.villageId = villageId;
-        this.villageName = villageName;
-        this.population = population;
-        this.waterRequirement = waterRequirement;
-        this.area = area;
-        this.district = district;
-        this.officerId = officerId;
-
-    }
+//    public VillageDTO(String villageId, String villageName, int population, double waterRequirement, double area, String district, String officerId) {
+//        this.villageId = villageId;
+//        this.villageName = villageName;
+//        this.population = population;
+//        this.waterRequirement = waterRequirement;
+//        this.area = area;
+//        this.district = district;
+//        this.officerId = officerId;
+//
+//    }
 
     @Override
     public String toString() {

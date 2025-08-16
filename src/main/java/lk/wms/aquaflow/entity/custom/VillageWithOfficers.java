@@ -1,18 +1,19 @@
-package lk.wms.aquaflow.entity;
+package lk.wms.aquaflow.entity.custom;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
+import lombok.*;
 
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Village {
+@NoArgsConstructor
+@Setter
+@Getter
+@ToString
+public class VillageWithOfficers {
     private String villageId;
     private String villageName;
     private int population;
     private double waterRequirement;
     private double area;
     private String district;
-    private String officerId; // FK
+    private String officerId;
+    private String officerName;
 }

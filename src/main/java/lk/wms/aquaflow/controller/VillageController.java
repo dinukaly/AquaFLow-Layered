@@ -16,6 +16,7 @@ import lk.wms.aquaflow.bo.custom.OfficersBO;
 import lk.wms.aquaflow.bo.custom.VillageBO;
 import lk.wms.aquaflow.controller.modal.AddVillageModalController;
 import lk.wms.aquaflow.dto.VillageDTO;
+import lk.wms.aquaflow.dto.custom.VillageWithOfficersDTO;
 import lk.wms.aquaflow.util.TableActionCell;
 import lk.wms.aquaflow.view.tm.VillageTM;
 
@@ -73,7 +74,7 @@ public class VillageController implements Initializable {
         }
     }
 
-    private VillageTM convertToTM(VillageDTO villageDTO) {
+    private VillageTM convertToTM(VillageWithOfficersDTO villageDTO) {
         return new VillageTM(
                 villageDTO.getVillageId(),
                 villageDTO.getVillageName(),
@@ -87,7 +88,7 @@ public class VillageController implements Initializable {
 
     private void loadAllVillages() throws SQLException, ClassNotFoundException {
         villageTableView.setItems(FXCollections.observableArrayList(
-                villageBO.getAllVillages().stream()
+                villageBO.getVillageWithOfficers().stream()
                         .map(this::convertToTM)
                         .toList()
         ));
@@ -108,7 +109,7 @@ public class VillageController implements Initializable {
 
     public void addButtonOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addVillage-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addVillage-Modal.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddVillageModalController controller = loader.getController();
@@ -148,7 +149,7 @@ public class VillageController implements Initializable {
                 );
             }
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addVillage-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addVillage-Modal.fxml"));
             AnchorPane modalRoot = loader.load();
 
             AddVillageModalController modalController = loader.getController();
