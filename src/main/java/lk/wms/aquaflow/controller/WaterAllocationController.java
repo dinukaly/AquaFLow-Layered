@@ -31,7 +31,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class WaterAllocationController implements Initializable {
-    public AnchorPane childRoot;
+    public AnchorPane waterAllocationRootPane;
     public ListView<WaterSourceDTO> waterSourcesList; // Use generics for type safety
     public Text lblTotalCapacity;
     public Text lblAllocatedAmount;
@@ -57,10 +57,10 @@ public class WaterAllocationController implements Initializable {
     public void txtSearch(ActionEvent actionEvent) {}
 
     public void viewWaterSourcesBtnOnAction(ActionEvent actionEvent) {
-        childRoot.getChildren().clear();
+        waterAllocationRootPane.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/waterSources-view.fxml"));
-            childRoot.getChildren().add(newPane);
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/waterSources-view.fxml"));
+            waterAllocationRootPane.getChildren().add(newPane);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -73,7 +73,7 @@ public class WaterAllocationController implements Initializable {
 
         waterSourcesList.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
-                loadAllocationsForWaterSource(newVal.getWaterSourceId());
+                loadAllocationsForWaterSource(newVal.getWatersource_id());
             } else {
                 allocationDetailsTBV.setItems(FXCollections.observableArrayList());
             }
@@ -144,7 +144,7 @@ public class WaterAllocationController implements Initializable {
                 waterSourcesList.getSelectionModel().selectFirst();
                 WaterSourceDTO first = waterSourcesList.getSelectionModel().getSelectedItem();
                 if (first != null) {
-                    loadAllocationsForWaterSource(first.getWaterSourceId());
+                    loadAllocationsForWaterSource(first.getWatersource_id());
                 }
             }
         } catch (Exception e) {
@@ -198,12 +198,12 @@ public class WaterAllocationController implements Initializable {
             WaterAllocationDTO dto = new WaterAllocationDTO(
                     tm.getAllocationId(),
                     Double.parseDouble(tm.getAllocationAmount()),
-                    selectedSource.getWaterSourceId(),
+                    selectedSource.getWatersource_id(),
                     villageBO.getVillageIdByName(tm.getVillageName()),
                     java.time.LocalDate.parse(tm.getAllocationDate())
             );
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addSourceAllocation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addSourceAllocation.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddSourceAllocationModalController controller = loader.getController();
@@ -216,7 +216,7 @@ public class WaterAllocationController implements Initializable {
             stage.showAndWait();
 
             // reload table
-            loadAllocationsForWaterSource(selectedSource.getWaterSourceId());
+            loadAllocationsForWaterSource(selectedSource.getWatersource_id());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -233,7 +233,7 @@ public class WaterAllocationController implements Initializable {
                 if (deleted) {
                     WaterSourceDTO selectedSource = waterSourcesList.getSelectionModel().getSelectedItem();
                     if (selectedSource != null) {
-                        loadAllocationsForWaterSource(selectedSource.getWaterSourceId());
+                        loadAllocationsForWaterSource(selectedSource.getWatersource_id());
                     }
                 } else {
                     new Alert(Alert.AlertType.ERROR, "Failed to delete allocation!").show();
@@ -247,7 +247,7 @@ public class WaterAllocationController implements Initializable {
 
     public void waterAllocationBtnOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addSourceAllocation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addSourceAllocation.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddSourceAllocationModalController controller = loader.getController();
@@ -262,7 +262,7 @@ public class WaterAllocationController implements Initializable {
             // reload after add
             WaterSourceDTO selectedSource = waterSourcesList.getSelectionModel().getSelectedItem();
             if (selectedSource != null) {
-                loadAllocationsForWaterSource(selectedSource.getWaterSourceId());
+                loadAllocationsForWaterSource(selectedSource.getWatersource_id());
             }
         } catch (Exception e) {
             e.printStackTrace();

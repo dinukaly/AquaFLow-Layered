@@ -76,11 +76,12 @@ public class AddSourceAllocationModalController implements Initializable {
 
             // Find and select the water source
             cmbWatersourceName.getItems().stream()
-                    .filter(source -> source.getWaterSourceId().equals(allocation.getWaterSourceId()))
+                    .filter(source -> source.getWatersource_id().equals(allocation.getWaterSourceId()))
                     .findFirst()
                     .ifPresent(source -> cmbWatersourceName.setValue(source));
 
-//            txtAllocateAmount.setText(String.valueOf(allocation.getAllocateAmount()));
+            txtAllocateAmount.setText(String.valueOf(allocation.getAllocationAmount()));
+            allocationDate.setValue(allocation.getAllocationDate());
             updateAllocationId = allocation.getAllocationId();
         }
 
@@ -120,13 +121,18 @@ public class AddSourceAllocationModalController implements Initializable {
             WaterAllocationDTO allocationDTO = new WaterAllocationDTO(
                     allocationId,
                     Double.parseDouble(txtAllocateAmount.getText()),
-                    cmbWatersourceName.getValue().getWaterSourceId(),
+                    cmbWatersourceName.getValue().getWatersource_id(),
                     cmbVillageName.getValue().getVillageId(),
                     allocationDate.getValue()
             );
             // Perform allocation
 
-            boolean result = allocationBO.addWaterAllocation(allocationDTO);
+            boolean result;
+            if (currentMode == Mode.UPDATE) {
+                result = allocationBO.updateWaterAllocation(allocationDTO);
+            } else {
+                result = allocationBO.allocateWater(allocationDTO);
+            }
 
             if (result) {
                 new Alert(Alert.AlertType.INFORMATION, "Water allocation successful!").show();
