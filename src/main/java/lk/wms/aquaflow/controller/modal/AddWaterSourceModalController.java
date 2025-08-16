@@ -67,9 +67,9 @@ public class AddWaterSourceModalController implements Initializable {
         } else if (mode == Mode.EDIT && data != null) {
             titleLabel.setText("Edit Water Source");
             addButton.setText("Update");
-            lblWaterSourceId.setText(data.getWaterSourceId());
-            txtSourceName.setText(data.getSourceName());
-            cmbSourceType.setValue(data.getSourceType());
+            lblWaterSourceId.setText(data.getWatersource_id());
+            txtSourceName.setText(data.getSource_name());
+            cmbSourceType.setValue(data.getSource_type());
             txtLocation.setText(data.getLocation());
             txtCapacity.setText(String.valueOf(data.getCapacity()));
             cmbStatus.setValue(data.getStatus());
@@ -85,7 +85,7 @@ public class AddWaterSourceModalController implements Initializable {
         cmbStatus.setValue(null);
     }
 
-    public void addButtonOnAction(ActionEvent actionEvent) {
+    public void addButtonOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         if (!validateInputs()) {
             return;
         }
@@ -93,7 +93,13 @@ public class AddWaterSourceModalController implements Initializable {
         String sourceName = txtSourceName.getText();
         String type = cmbSourceType.getValue();
         String location = txtLocation.getText();
-        double capacity = Double.parseDouble(txtCapacity.getText());
+        double capacity = 0;
+        try {
+            capacity = Double.parseDouble(txtCapacity.getText());
+        } catch (NumberFormatException e) {
+            AlertUtil.showError("Capacity must be a valid number");
+            return;
+        }
         String status = cmbStatus.getValue();
         WaterSourceDTO dto = new WaterSourceDTO(id, sourceName, type, location, capacity, status);
         boolean success;
