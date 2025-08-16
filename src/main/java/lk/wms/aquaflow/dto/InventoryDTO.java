@@ -14,16 +14,7 @@ public class InventoryDTO {
     private String quantity;
     private double unitPrice;
     private String supplierId;
-    private String supplierName;
 
-    public InventoryDTO(String inventoryId, String type, String quantity, double unitPrice, String supplierId) {
-        this.inventoryId = inventoryId;
-        this.type = type;
-        this.quantity = quantity;
-        this.unitPrice = unitPrice;
-        this.supplierId = supplierId;
-
-    }
 
     @Override
     public String toString() {

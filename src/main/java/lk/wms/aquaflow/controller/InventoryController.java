@@ -17,6 +17,7 @@ import lk.wms.aquaflow.bo.custom.InventoryBO;
 import lk.wms.aquaflow.bo.custom.VendorBO;
 import lk.wms.aquaflow.controller.modal.AddInventoryModalController;
 import lk.wms.aquaflow.dto.InventoryDTO;
+import lk.wms.aquaflow.dto.custom.InventoryWithSupplierNameDTO;
 import lk.wms.aquaflow.util.TableActionCell;
 import lk.wms.aquaflow.view.tm.InventoryTM;
 
@@ -69,7 +70,7 @@ public class InventoryController implements Initializable {
     }
 
 
-    private InventoryTM convertToTM(InventoryDTO inventoryDTO) {
+    private InventoryTM convertToTM(InventoryWithSupplierNameDTO inventoryDTO) {
         return new InventoryTM(
                 inventoryDTO.getInventoryId(),
                 inventoryDTO.getType(),
@@ -91,7 +92,7 @@ public class InventoryController implements Initializable {
     public void addButtonOnAction(ActionEvent actionEvent) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addInventory-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addInventory-Modal.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddInventoryModalController controller = loader.getController();
@@ -136,7 +137,7 @@ public class InventoryController implements Initializable {
                 );
             }
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addInventory-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addInventory-Modal.fxml"));
             AnchorPane modalRoot = loader.load();
 
             AddInventoryModalController modalController = loader.getController();

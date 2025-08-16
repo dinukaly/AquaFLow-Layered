@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class Inventory {
     private String inventoryId;
     private String type;
-    private int quantity;
-    private BigDecimal unitPrice;
+    private String quantity;
+    private double unitPrice;
     private String supplierId; // FK
 }
