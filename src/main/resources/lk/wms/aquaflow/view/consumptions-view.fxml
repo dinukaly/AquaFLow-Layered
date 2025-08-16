@@ -15,70 +15,72 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import java.net.URL?>
 <?import java.lang.String?>
 <AnchorPane fx:id="childRoot" prefHeight="697.0" prefWidth="986.0" style="-fx-background-color: white;" stylesheets="@../styles/consumption.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.wms.aquaflow.controller.ConsumptionsController">
-   <children>
-      <HBox layoutX="10.0" layoutY="10.0" prefHeight="71.0" prefWidth="963.0" />
-      <Text fill="#363434" layoutX="78.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Consumption Management">
-         <font>
-            <Font name="Ebrima" size="17.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/icons8-menu-50.png" />
-         </image>
-      </ImageView>
-      <ComboBox fx:id="cmbVillage" layoutX="717.0" layoutY="29.0" onAction="#cmbVillageOnAction" prefHeight="26.0" prefWidth="117.0" promptText="Village" />
-      <Button fx:id="addButton" layoutX="853.0" layoutY="639.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="36.0" prefWidth="107.0" stylesheets="@../styles/buttons.css" text="+ Add New" textFill="WHITE" />
-      <Rectangle  arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="320.0" layoutX="31.0" layoutY="94.0" stroke="WHITE" strokeType="INSIDE" width="453.0" />
-      <ComboBox fx:id="cmbMonth" layoutX="842.0" layoutY="28.0" onAction="#cmbMonthOnAction" prefHeight="27.0" prefWidth="117.0" promptText="Month" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="320.0" layoutX="505.0" layoutY="94.0" stroke="WHITE" strokeType="INSIDE" width="453.0" />
-      <Text fill="#363434" layoutX="52.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Consumption Trend">
-         <font>
-            <Font name="Ebrima Bold" size="16.0" />
-         </font>
-      </Text>
-      <Text fill="#363434" layoutX="528.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consumption by Village">
-         <font>
-            <Font name="Ebrima Bold" size="16.0" />
-         </font>
-      </Text>
-      <ComboBox fx:id="cmbLastYear" layoutX="356.0" layoutY="111.0" onAction="#cmbLastYearOnAction" prefHeight="26.0" prefWidth="117.0" promptText="Last Year" />
-      <ComboBox fx:id="cmbLastYearByVillage" layoutX="825.0" layoutY="111.0" onAction="#cmbLastYearByVillageOnAction" prefHeight="26.0" prefWidth="117.0" promptText="Last Year" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="160.0" layoutX="31.0" layoutY="455.0" stroke="WHITE" strokeType="INSIDE" width="929.0" />
-      <LineChart fx:id="monthlyConsumptionChart" layoutX="52.0" layoutY="158.0" prefHeight="236.0" prefWidth="384.0" title="Monthly Consumption Trend" animated="false">
-        <xAxis>
-          <CategoryAxis label="Month" side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis label="Units Consumed" side="LEFT" />
-        </yAxis>
-        <stylesheets>
-          <URL value="@../styles/charts.css" />
-        </stylesheets>
-      </LineChart>
-      <LineChart fx:id="monthlyConsumptionChartByVillage" layoutX="525.0" layoutY="158.0" prefHeight="236.0" prefWidth="384.0" title="Village-wise Consumption" animated="false">
-         <xAxis>
-            <CategoryAxis label="Village" side="BOTTOM" />
-         </xAxis>
-         <yAxis>
-            <NumberAxis label="Units Consumed" side="LEFT" />
-         </yAxis>
-         <stylesheets>
-            <URL value="@../styles/charts.css" />
-         </stylesheets>
-      </LineChart>
-      <TableView fx:id="consumptionTBV" layoutX="37.0" layoutY="460.0" prefHeight="152.0" prefWidth="919.0">
-        <columns>
-          <TableColumn fx:id="householdCol" prefWidth="117.0" text="Household" />
-          <TableColumn fx:id="villageCol" prefWidth="107.0" text="Village" />
-            <TableColumn fx:id="currentConsumptionCol" prefWidth="178.0" text="Current Consumption" />
-            <TableColumn fx:id="previousMonthCol" prefWidth="178.0" text="Previous Month" />
-            <TableColumn fx:id="changeCol" prefWidth="178.0" text="Change" />
-            <TableColumn fx:id="actionsCol" prefWidth="150.0" text="Actions" />
-        </columns>
-      </TableView>
-   </children>
+    <children>
+        <HBox layoutX="10.0" layoutY="10.0" prefHeight="71.0" prefWidth="963.0" />
+        <Text fill="#363434" layoutX="78.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Water Consumption Management">
+            <font>
+                <Font name="Ebrima" size="17.0" />
+            </font>
+        </Text>
+        <ImageView fitHeight="27.0" fitWidth="33.0" layoutX="31.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/icons8-menu-50.png" />
+            </image>
+        </ImageView>
+        <ComboBox fx:id="cmbVillage" layoutX="717.0" layoutY="29.0" onAction="#cmbVillageOnAction" prefHeight="26.0" prefWidth="117.0" promptText="Village" />
+        <Button fx:id="addButton" layoutX="853.0" layoutY="639.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="36.0" prefWidth="107.0" stylesheets="@../styles/buttons.css" text="+ Add New" textFill="WHITE" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="320.0" layoutX="31.0" layoutY="94.0" stroke="WHITE" strokeType="INSIDE" width="453.0" />
+        <ComboBox fx:id="cmbMonth" layoutX="842.0" layoutY="28.0" onAction="#cmbMonthOnAction" prefHeight="27.0" prefWidth="117.0" promptText="Month" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="320.0" layoutX="505.0" layoutY="94.0" stroke="WHITE" strokeType="INSIDE" width="453.0" />
+        <Text fill="#363434" layoutX="52.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Consumption Trend">
+            <font>
+                <Font name="Ebrima Bold" size="16.0" />
+            </font>
+        </Text>
+        <Text fill="#363434" layoutX="528.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consumption by Village">
+            <font>
+                <Font name="Ebrima Bold" size="16.0" />
+            </font>
+        </Text>
+        <ComboBox fx:id="cmbLastYear" layoutX="356.0" layoutY="111.0" onAction="#cmbLastYearOnAction" prefHeight="26.0" prefWidth="117.0" promptText="Last Year" />
+        <ComboBox fx:id="cmbLastYearByVillage" layoutX="825.0" layoutY="111.0" onAction="#cmbLastYearByVillageOnAction" prefHeight="26.0" prefWidth="117.0" promptText="Last Year" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="160.0" layoutX="31.0" layoutY="455.0" stroke="WHITE" strokeType="INSIDE" width="929.0" />
+
+        <LineChart fx:id="monthlyConsumptionChart" layoutX="52.0" layoutY="158.0" prefHeight="236.0" prefWidth="384.0" title="Monthly Consumption Trend" animated="false">
+            <xAxis>
+                <CategoryAxis label="Month" side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Units Consumed" side="LEFT" />
+            </yAxis>
+            <stylesheets>
+                <String fx:value="@../styles/charts.css" />
+            </stylesheets>
+        </LineChart>
+
+        <LineChart fx:id="monthlyConsumptionChartByVillage" layoutX="525.0" layoutY="158.0" prefHeight="236.0" prefWidth="384.0" title="Village-wise Consumption" animated="false">
+            <xAxis>
+                <CategoryAxis label="Village" side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Units Consumed" side="LEFT" />
+            </yAxis>
+            <stylesheets>
+                <String fx:value="@../styles/charts.css" />
+            </stylesheets>
+        </LineChart>
+
+        <TableView fx:id="consumptionTBV" layoutX="37.0" layoutY="460.0" prefHeight="152.0" prefWidth="919.0">
+            <columns>
+                <TableColumn fx:id="householdCol" prefWidth="117.0" text="Household" />
+                <TableColumn fx:id="villageCol" prefWidth="107.0" text="Village" />
+                <TableColumn fx:id="currentConsumptionCol" prefWidth="178.0" text="Current Consumption" />
+                <TableColumn fx:id="previousMonthCol" prefWidth="178.0" text="Previous Month" />
+                <TableColumn fx:id="changeCol" prefWidth="178.0" text="Change" />
+                <TableColumn fx:id="actionsCol" prefWidth="150.0" text="Actions" />
+            </columns>
+        </TableView>
+    </children>
 </AnchorPane>
