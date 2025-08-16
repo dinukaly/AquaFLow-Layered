@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -13,8 +14,8 @@ import java.sql.Date;
 public class WaterMaintenance {
     private String maintenanceId;
     private String description;
-    private Date maintenanceDate;
-    private BigDecimal cost;
+    private LocalDate maintenanceDate;
+    private double cost;
     private String status;
     private String villageId; // FK
 }
