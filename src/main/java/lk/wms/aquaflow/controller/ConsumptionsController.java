@@ -23,6 +23,7 @@ import lk.wms.aquaflow.bo.custom.HouseholdsBO;
 import lk.wms.aquaflow.bo.custom.VillageBO;
 import lk.wms.aquaflow.controller.modal.AddConsumptionModalController;
 import lk.wms.aquaflow.dto.ConsumptionDTO;
+import lk.wms.aquaflow.dto.custom.ConsumptionWithHouseVillageDTO;
 import lk.wms.aquaflow.util.AlertUtil;
 import lk.wms.aquaflow.util.TableActionCell;
 import lk.wms.aquaflow.view.tm.ConsumptionTM;
@@ -31,10 +32,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.Month;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ConsumptionsController implements Initializable {
@@ -126,52 +124,19 @@ public class ConsumptionsController implements Initializable {
 
     private void loadAllConsumptions() {
         try {
-            ArrayList<ConsumptionDTO> consumptionList = consumptionsBO.getAllConsumptions();
+            List<ConsumptionWithHouseVillageDTO> dtos =
+                    consumptionsBO.getAllConsumptionDetails();
             consumptionTMList.clear();
 
-            for (ConsumptionDTO dto : consumptionList) {
-                // Get household info
-                String houseId = dto.getHouseId();
-                String householdName = "";
-                String villageName = "";
-
-                try {
-                    var household = householdsBO.getHouseholdById(houseId);
-                    if (household != null) {
-                        householdName = household.getOwnerName();
-                        villageName = household.getVillageName();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                String currentConsumption = dto.getAmountOfUnits();
-                String previousMonth = "0";
-                String change = "0";
-
-                try {
-                    ConsumptionDTO previousConsumption = consumptionsBO.getPreviousConsumption(houseId, dto.getEndDate());
-                    if (previousConsumption != null) {
-                        previousMonth = previousConsumption.getAmountOfUnits();
-
-                        // Calculate change
-                        int current = Integer.parseInt(currentConsumption);
-                        int previous = Integer.parseInt(previousMonth);
-                        int changeValue = current - previous;
-                        change = String.valueOf(changeValue);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
+            for (ConsumptionWithHouseVillageDTO dto : dtos) {
                 ConsumptionTM tm = new ConsumptionTM(
                         dto.getConsumptionId(),
-                        householdName,
-                        villageName,
-                        currentConsumption,
-                        previousMonth,
-                        change,
-                        houseId
+                        dto.getOwnerName(),
+                        dto.getVillageName(),
+                        dto.getAmountOfUnits(),
+                        dto.getPreviousMonth(),
+                        dto.getChange(),
+                        dto.getHouseId()
                 );
 
                 consumptionTMList.add(tm);
@@ -217,7 +182,7 @@ public class ConsumptionsController implements Initializable {
     @FXML
     public void addButtonOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addConsumption-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addConsumption-Modal.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddConsumptionModalController controller = loader.getController();
@@ -241,7 +206,7 @@ public class ConsumptionsController implements Initializable {
             ConsumptionDTO dto = consumptionsBO.getConsumptionById(tm.getConsumptionId());
 
             if (dto != null) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addConsumption-Modal.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addConsumption-Modal.fxml"));
                 AnchorPane loadModal = loader.load();
 
                 AddConsumptionModalController controller = loader.getController();

@@ -12,8 +12,8 @@ import java.sql.Date;
 @AllArgsConstructor
 public class Consumption {
     private String consumptionId;
-    private BigDecimal amountOfUnits;
-    private Date startDate;
-    private Date endDate;
+    private String amountOfUnits;
+    private String startDate;
+    private String endDate;
     private String houseId; // FK
 }
