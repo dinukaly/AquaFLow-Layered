@@ -30,10 +30,10 @@ public class TableActionCell<T> {
                             setGraphic(null);
                         } else {
                             ImageView editIcon = new ImageView(
-                                    new Image(getClass().getResourceAsStream("/lk/aquaflowwms/assets/icons8-update-50.png"))
+                                    new Image(getClass().getResourceAsStream("/lk/wms/aquaflow/assets/icons8-update-50.png"))
                             );
                             ImageView deleteIcon = new ImageView(
-                                    new Image(getClass().getResourceAsStream("/lk/aquaflowwms/assets/icons8-delete-16.png"))
+                                    new Image(getClass().getResourceAsStream("/lk/wms/aquaflow/assets/icons8-delete-16.png"))
                             );
 
                             editIcon.setFitWidth(20);
@@ -82,7 +82,7 @@ public class TableActionCell<T> {
                             completeButton.setStyle("-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 10px; -fx-padding: 3 8;");
                             
                             ImageView deleteIcon = new ImageView(
-                                    new Image(getClass().getResourceAsStream("/lk/aquaflowwms/assets/icons8-delete-16.png"))
+                                    new Image(getClass().getResourceAsStream("/lk/wms/aquaflow/assets/icons8-delete-16.png"))
                             );
 
                             deleteIcon.setFitWidth(20);
@@ -126,7 +126,7 @@ public class TableActionCell<T> {
                             setGraphic(null);
                         } else {
                             ImageView editIcon = new ImageView(
-                                    new Image(getClass().getResourceAsStream("/lk/aquaflowwms/assets/icons8-update-50.png"))
+                                    new Image(getClass().getResourceAsStream("/lk/wms/aquaflow/assets/icons8-update-50.png"))
                             );
                             
                             // Create a Complete button with text
@@ -134,7 +134,7 @@ public class TableActionCell<T> {
                             completeButton.setStyle("-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 10px; -fx-padding: 3 8;");
                             
                             ImageView deleteIcon = new ImageView(
-                                    new Image(getClass().getResourceAsStream("/lk/aquaflowwms/assets/icons8-delete-16.png"))
+                                    new Image(getClass().getResourceAsStream("/lk/wms/aquaflow/assets/icons8-delete-16.png"))
                             );
 
                             editIcon.setFitWidth(20);
