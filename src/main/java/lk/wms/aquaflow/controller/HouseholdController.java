@@ -19,13 +19,10 @@ import lk.wms.aquaflow.bo.custom.VillageBO;
 import lk.wms.aquaflow.controller.modal.AddHouseholdModalController;
 import lk.wms.aquaflow.db.DBConnection;
 import lk.wms.aquaflow.dto.HouseholdDTO;
+import lk.wms.aquaflow.dto.custom.HouseholdWithVillageDTO;
 import lk.wms.aquaflow.util.TableActionCell;
 import lk.wms.aquaflow.view.tm.HouseholdTM;
-import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
+import lk.wms.aquaflow.report.ReportGenerator;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -57,24 +54,7 @@ public class HouseholdController implements Initializable {
 
     //TODO: move reports to a custom method
     public void btnReportsOnAction(ActionEvent actionEvent) {
-        try {
-            JasperReport report = JasperCompileManager.compileReport(
-                    getClass().getResourceAsStream("/lk/aquaflowwms/reports/household.jrxml")
-            );
-            Connection connection = DBConnection.getInstance().getConnection();
-            Map<String, Object> parameters = new HashMap<>();
-            parameters.put("P_DATE", LocalDate.now().toString());
-            JasperPrint jasperPrint = JasperFillManager.fillReport(
-                    report,
-                    parameters,
-                    connection
-            );
-            JasperViewer.viewReport(jasperPrint, false);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Error generating report: " + e.getMessage()).show();
-        }
+        ReportGenerator.generateHouseholdReport();
     }
 
     public void txtSearchOnAction(ActionEvent actionEvent) {
@@ -105,7 +85,7 @@ public class HouseholdController implements Initializable {
 
     public void addHouseholdBtnOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addHousehold-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addHousehold-Modal.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddHouseholdModalController controller = loader.getController();
@@ -148,7 +128,7 @@ public class HouseholdController implements Initializable {
         ));
     }
 
-    private HouseholdTM convertToTM(HouseholdDTO householdDTO) {
+    private HouseholdTM convertToTM(HouseholdWithVillageDTO householdDTO) {
         return new HouseholdTM(
                 householdDTO.getHouseId(),
                 householdDTO.getOwnerName(),
@@ -161,7 +141,7 @@ public class HouseholdController implements Initializable {
 
     private void loadAllHouseholds() throws Exception {
         householdTableView.setItems(FXCollections.observableArrayList(
-                householdsBO.getAllHouseholds().stream()
+                householdsBO.getAllHouseholdWithVillage().stream()
                         .map(this::convertToTM)
                         .toList()
         ));
@@ -189,7 +169,7 @@ public class HouseholdController implements Initializable {
                 );
             }
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addHousehold-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addHousehold-Modal.fxml"));
             AnchorPane modalRoot = loader.load();
 
             AddHouseholdModalController modalController = loader.getController();
@@ -240,7 +220,7 @@ public class HouseholdController implements Initializable {
     public void viewConsumptionPageBtn(ActionEvent actionEvent) {
         childRoot.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/consumptions-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/consumptions-view.fxml"));
             childRoot.getChildren().add(newPane);
         } catch (Exception e) {
             e.printStackTrace();
