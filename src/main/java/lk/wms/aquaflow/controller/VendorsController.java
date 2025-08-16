@@ -51,7 +51,7 @@ public class VendorsController implements Initializable {
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         addressCol.setCellValueFactory(new PropertyValueFactory<>("address"));
         emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
-        contactCol.setCellValueFactory(new PropertyValueFactory<>("telephone"));
+        contactCol.setCellValueFactory(new PropertyValueFactory<>("tel"));
         actionCol.setCellFactory(TableActionCell.create(
                 this::handleEdit,
                 this::handleDelete
@@ -88,7 +88,7 @@ public class VendorsController implements Initializable {
 
     public void addButtonOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addVendor-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addVendor-Modal.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddVendorModalController controller = loader.getController();
@@ -127,7 +127,7 @@ public class VendorsController implements Initializable {
         );
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addVendor-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addVendor-Modal.fxml"));
             AnchorPane modalRoot = loader.load();
 
             AddVendorModalController modalController = loader.getController();
@@ -171,4 +171,3 @@ public class VendorsController implements Initializable {
     }
 
 }
-
