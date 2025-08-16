@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -13,5 +14,5 @@ public class InventoryMaintenance {
     private String inventoryId; // PK (part)
     private String maintenanceId; // PK (part)
     private int quantityUsed;
-    private Date dateUsed;
+    private LocalDate dateUsed;
 }
