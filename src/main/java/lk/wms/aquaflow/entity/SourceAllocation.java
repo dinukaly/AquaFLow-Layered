@@ -12,7 +12,7 @@ import java.sql.Date;
 @AllArgsConstructor
 public class SourceAllocation {
     private String allocationId;
-    private BigDecimal allocationAmount;
+    private double allocationAmount;
     private String watersourceId; // FK
     private String villageId; // FK
     private Date allocationDate;
