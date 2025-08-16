@@ -12,9 +12,9 @@ import java.sql.Date;
 @AllArgsConstructor
 public class WaterDistribution {
     private String distributionId;
-    private BigDecimal totalAllocation;
+    private double totalAllocation;
     private String status;
-    private BigDecimal usedAmount;
+    private double usedAmount;
     private Date distributionDate;
     private String villageId; // FK
 }
