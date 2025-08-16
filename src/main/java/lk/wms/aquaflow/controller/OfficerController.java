@@ -81,7 +81,7 @@ public class OfficerController implements Initializable {
 
     public void addButtonOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addOfficer-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addOfficer-Modal.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddOfficerModalController controller = loader.getController();
@@ -113,7 +113,7 @@ public class OfficerController implements Initializable {
         );
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addOfficer-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addOfficer-Modal.fxml"));
             AnchorPane modalRoot = loader.load();
 
             AddOfficerModalController modalController = loader.getController();
