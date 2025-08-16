@@ -14,13 +14,14 @@ import javafx.stage.Stage;
 import lk.wms.aquaflow.bo.custom.BOFactory;
 import lk.wms.aquaflow.bo.custom.BillingBO;
 import lk.wms.aquaflow.dto.BillDTO;
+import lk.wms.aquaflow.dto.custom.CustomBillDTO;
 import lk.wms.aquaflow.util.AlertUtil;
 import lk.wms.aquaflow.util.InputValidator;
 
 
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class AddPaymentModalController {
@@ -41,9 +42,9 @@ public class AddPaymentModalController {
 
    // private BillModel billModel = new BillModel();
    private final BillingBO billingBO = (BillingBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.BILLING);
-    private ObservableList<BillDTO> unpaidBills = FXCollections.observableArrayList();
+    private ObservableList<CustomBillDTO> unpaidBills = FXCollections.observableArrayList();
 
-    public void initialize(ArrayList<BillDTO> unpaidBills) {
+    public void initialize(List<CustomBillDTO> unpaidBills) {
         this.unpaidBills.setAll(unpaidBills);
 
         // Setup payment method options
@@ -58,7 +59,7 @@ public class AddPaymentModalController {
 
         // Setup bill ID combo box
         ObservableList<String> billIds = unpaidBills.stream()
-                .map(BillDTO::getBillId)
+                .map(CustomBillDTO::getBillId)
                 .collect(Collectors.toCollection(FXCollections::observableArrayList));
         cmbBillId.setItems(billIds);
 
@@ -68,15 +69,25 @@ public class AddPaymentModalController {
         // Listen for bill selection to update amount
         cmbBillId.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
-                BillDTO selectedBill = unpaidBills.stream()
+                CustomBillDTO selectedBill = unpaidBills.stream()
                         .filter(b -> b.getBillId().equals(newVal))
                         .findFirst()
                         .orElse(null);
                 if (selectedBill != null) {
-                    txtAmount.setText(selectedBill.getTotalCost());
+                    String totalCost = selectedBill.getTotalCost().replaceAll("[^\\d.]", "");
+                    double amountValue = Double.parseDouble(totalCost);
+                    if (amountValue == (long) amountValue) {
+                        txtAmount.setText(String.format("%d", (long) amountValue));
+                    } else {
+                        txtAmount.setText(Double.toString(amountValue));
+                    }
                 }
             }
         });
+
+        if (!unpaidBills.isEmpty()) {
+            cmbBillId.getSelectionModel().selectFirst();
+        }
     }
 
     @FXML
@@ -110,6 +121,8 @@ public class AddPaymentModalController {
         } catch (RuntimeException e) {
             e.printStackTrace();
             AlertUtil.showError("Database error: " + e.getMessage());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -145,4 +158,3 @@ public class AddPaymentModalController {
         ((Stage) txtAmount.getScene().getWindow()).close();
     }
 }
-
