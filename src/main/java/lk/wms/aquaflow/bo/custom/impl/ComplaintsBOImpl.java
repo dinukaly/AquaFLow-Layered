@@ -55,8 +55,20 @@ public class ComplaintsBOImpl implements ComplaintsBO {
     }
 
     @Override
-    public ComplaintsWithOwnerEmailDTO getComplaintById(String complaintId) throws SQLException, ClassNotFoundException {
-        ComplaintWithOwnerEmail complaint = queryDAO.getComplaintById(complaintId);
+    public ComplaintDTO getComplaintById(String complaintId) throws SQLException, ClassNotFoundException {
+        Complaint complaint = queryDAO.getComplaintById(complaintId);
+        return new ComplaintDTO(
+                complaint.getComplaintId(),
+                complaint.getDate().toString(),
+                complaint.getDescription(),
+                complaint.getStatus(),
+                complaint.getHouseId()
+        );
+    }
+
+    @Override
+    public ComplaintsWithOwnerEmailDTO getComplaintByIdWithEmail(String complaintId) throws SQLException, ClassNotFoundException {
+        ComplaintWithOwnerEmail complaint = queryDAO.getComplaintByIdWithEmail(complaintId);
         return new ComplaintsWithOwnerEmailDTO(
                 complaint.getComplaintId(),
                 complaint.getDate().toString(),
@@ -68,8 +80,20 @@ public class ComplaintsBOImpl implements ComplaintsBO {
     }
 
     @Override
-    public ArrayList<ComplaintDTO> getAllComplaints() {
-        return null;
+    public ArrayList<ComplaintsWithOwnerEmailDTO> getAllComplaints() throws SQLException, ClassNotFoundException {
+        ArrayList<ComplaintWithOwnerEmail> all = queryDAO.getAllComplaints();
+        ArrayList<ComplaintsWithOwnerEmailDTO> allDTO = new ArrayList<>();
+        for (ComplaintWithOwnerEmail complaint : all) {
+            allDTO.add(new ComplaintsWithOwnerEmailDTO(
+                    complaint.getComplaintId(),
+                    complaint.getDate().toString(),
+                    complaint.getDescription(),
+                    complaint.getStatus(),
+                    complaint.getHouseId(),
+                    complaint.getOwnerEmail()
+            ));
+        }
+        return allDTO;
     }
 
     @Override

@@ -13,8 +13,9 @@ public interface ComplaintsBO extends SuperBO {
     public boolean updateComplaint(ComplaintDTO complaintDTO) throws SQLException, ClassNotFoundException;
     public boolean deleteComplaint(String complaintId) throws SQLException, ClassNotFoundException;
     public boolean updateComplaintStatus(String complaintId, String status);
-    public ComplaintsWithOwnerEmailDTO getComplaintById(String complaintId) throws SQLException, ClassNotFoundException;
-    public ArrayList<ComplaintDTO> getAllComplaints();
+    public ComplaintDTO getComplaintById(String complaintId) throws SQLException, ClassNotFoundException;
+    public ComplaintsWithOwnerEmailDTO getComplaintByIdWithEmail(String complaintId) throws SQLException, ClassNotFoundException;
+    public ArrayList<ComplaintsWithOwnerEmailDTO> getAllComplaints() throws SQLException, ClassNotFoundException;
     public ArrayList<ComplaintsWithOwnerEmailDTO> getRecentComplaints() throws SQLException, ClassNotFoundException;
     public int getTotalComplaintsCount();
     public int getSolvedComplaintsCount();

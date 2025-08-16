@@ -18,6 +18,7 @@ import lk.wms.aquaflow.bo.custom.BOFactory;
 import lk.wms.aquaflow.bo.custom.ComplaintsBO;
 import lk.wms.aquaflow.controller.modal.AddComplaintModalController;
 import lk.wms.aquaflow.dto.ComplaintDTO;
+import lk.wms.aquaflow.dto.custom.ComplaintsWithOwnerEmailDTO;
 import lk.wms.aquaflow.util.EmailUtil;
 import lk.wms.aquaflow.util.TableActionCell;
 import lk.wms.aquaflow.view.tm.ComplaintTM;
@@ -166,7 +167,7 @@ public class ComplaintsController {
                 boolean updated = complaintBO.updateComplaintStatus(complaintTM.getComplaintId(), "Completed");
 
                 if (updated) {
-                    ComplaintDTO complaintDTO = complaintBO.getComplaintById(complaintTM.getComplaintId());
+                    ComplaintsWithOwnerEmailDTO complaintDTO = complaintBO.getComplaintByIdWithEmail(complaintTM.getComplaintId());
 
                     if (complaintDTO != null && complaintDTO.getOwnerEmail() != null && !complaintDTO.getOwnerEmail().isEmpty()) {
                         String emailBody = EmailUtil.createComplaintResolutionEmailBody(
@@ -207,10 +208,10 @@ public class ComplaintsController {
 
     private void loadAllComplaints() {
         try {
-            ArrayList<ComplaintDTO> allComplaints = complaintBO.getAllComplaints();
+            ArrayList<ComplaintsWithOwnerEmailDTO> allComplaints = complaintBO.getAllComplaints();
             ObservableList<ComplaintTM> complaintTMS = FXCollections.observableArrayList();
 
-            for (ComplaintDTO dto : allComplaints) {
+            for (ComplaintsWithOwnerEmailDTO dto : allComplaints) {
                 complaintTMS.add(new ComplaintTM(
                         dto.getComplaintId(),
                         dto.getDate(),
@@ -260,7 +261,7 @@ public class ComplaintsController {
     }
 
     private void openComplaintModal(ComplaintTM complaintTM) throws IOException, SQLException, ClassNotFoundException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addComplaint-Modal.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addComplaint-Modal.fxml"));
         Parent root = loader.load();
 
         AddComplaintModalController controller = loader.getController();
