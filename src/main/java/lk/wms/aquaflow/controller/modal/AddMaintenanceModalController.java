@@ -8,7 +8,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lk.wms.aquaflow.bo.custom.BOFactory;
+import lk.wms.aquaflow.bo.custom.InventoryBO;
 import lk.wms.aquaflow.bo.custom.MaintenanceBO;
+import lk.wms.aquaflow.bo.custom.VillageBO;
+import lk.wms.aquaflow.dto.InventoryDTO;
 import lk.wms.aquaflow.dto.InventoryMaintenanceDTO;
 import lk.wms.aquaflow.dto.WaterMaintenanceDTO;
 import lk.wms.aquaflow.view.tm.InventoryEntry;
@@ -37,6 +40,8 @@ public class AddMaintenanceModalController {
     public ObservableList<InventoryEntry> inventoryList = FXCollections.observableArrayList();
 
     private MaintenanceBO maintenanceBO = (MaintenanceBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.MAINTENANCE);
+    private VillageBO  villageBO = (VillageBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.VILLAGE);
+    private InventoryBO inventoryBO = (InventoryBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.INVENTORY);
 
     public void initialize() {
         try {
@@ -67,47 +72,28 @@ public class AddMaintenanceModalController {
         }
     }
 
-    // TODO : Move this to a custom method
     private void loadVillages() throws SQLException, ClassNotFoundException {
-        ResultSet result = CrudUtil.execute("SELECT village_id, village_name FROM village");
-        if (result == null) {
-            System.out.println("[DEBUG] Village query returned null result");
+        List<String> villageNames = villageBO.getAllVillageNames();
+        if (villageNames.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "No villages found in database").show();
             return;
         }
-
-        boolean hasResults = false;
-        while (result.next()) {
-            hasResults = true;
-            cmbVillageName.getItems().add(result.getString(1) + " - " + result.getString(2));
-        }
-
-        if (!hasResults) {
-            System.out.println("[DEBUG] No villages found in database");
-            new Alert(Alert.AlertType.WARNING, "No villages found in database").show();
-        }
+        cmbVillageName.getItems().addAll(villageNames);
     }
 
-    // TODO : move this to inventory BO
     private void loadInventoryTypes() throws SQLException, ClassNotFoundException {
-        ResultSet result = CrudUtil.execute("SELECT inventory_id, type, unit_price FROM inventory WHERE quantity > 0");
-        if (result == null) {
-            System.out.println("[DEBUG] Inventory query returned null result");
+        List<InventoryDTO> availableItems = inventoryBO.getAvailableInventoryItems();
+        if (availableItems.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "No available inventory items found").show();
             return;
         }
-
-        boolean hasResults = false;
-        while (result.next()) {
-            hasResults = true;
+        
+        for (InventoryDTO item : availableItems) {
             cmbInventoryType.getItems().add(
-                    result.getString(1) + " - " +
-                            result.getString(2) + " (" +
-                            result.getDouble(3) + ")"
+                    item.getInventoryId() + " - " +
+                    item.getType() + " (" +
+                    item.getUnitPrice() + ")"
             );
-        }
-
-        if (!hasResults) {
-            System.out.println("[DEBUG] No inventory items found in database");
-            new Alert(Alert.AlertType.WARNING, "No available inventory items found").show();
         }
     }
 
@@ -224,4 +210,3 @@ public class AddMaintenanceModalController {
         }
     }
 }
-
