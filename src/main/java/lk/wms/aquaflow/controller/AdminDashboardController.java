@@ -153,7 +153,7 @@ public class AdminDashboardController implements Initializable {
     }
 
 
-    private String getWaterSourceNameForVillage(String villageId) {
+    private String getWaterSourceNameForVillage(String villageId) throws SQLException, ClassNotFoundException {
         String waterSourceId = waterAllocationBO.getWaterSourceIdForVillage(villageId);
 
         if (waterSourceId != null) {
@@ -215,7 +215,7 @@ public class AdminDashboardController implements Initializable {
 
     public void addButtonOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addDistribution-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addDistribution-Modal.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddDistributionModalController controller = loader.getController();
@@ -266,9 +266,11 @@ public class AdminDashboardController implements Initializable {
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
         try {
             Map<String, Integer> statusCounts = waterSourceBO.getStatusCount();
-            statusCounts.forEach((status, count) -> 
-                pieChartData.add(new PieChart.Data(status, count))
-            );
+            if (statusCounts != null) {
+                statusCounts.forEach((status, count) ->
+                    pieChartData.add(new PieChart.Data(status, count))
+                );
+            }
             waterSourceChart.setData(pieChartData);
         } catch (Exception e) {
             e.printStackTrace();
@@ -288,7 +290,7 @@ public class AdminDashboardController implements Initializable {
     public void btnVillageOnAction(ActionEvent actionEvent) {
         changingAnchor.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/villages-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/villages-view.fxml"));
             changingAnchor.getChildren().add(newPane);
         }catch (Exception e){
             e.printStackTrace();
@@ -299,7 +301,7 @@ public class AdminDashboardController implements Initializable {
         changingAnchor.getChildren().clear();
         try {
             // Load the FXML
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/waterAllocations-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/waterAllocations-view.fxml"));
 
             // Add the new pane to your changingAnchor
             changingAnchor.getChildren().add(newPane);
@@ -325,7 +327,7 @@ public class AdminDashboardController implements Initializable {
     public void btnHouseHoldsOnAction(ActionEvent actionEvent) {
         changingAnchor.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/household-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/household-view.fxml"));
             changingAnchor.getChildren().add(newPane);
         }catch (Exception e){
 
@@ -335,7 +337,7 @@ public class AdminDashboardController implements Initializable {
     public void btnMaintenanceOnAction(ActionEvent actionEvent) {
         changingAnchor.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/maintenance-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/maintenance-view.fxml"));
             changingAnchor.getChildren().add(newPane);
         }catch (Exception e){
 
@@ -345,7 +347,7 @@ public class AdminDashboardController implements Initializable {
     public void btnEmployeeOnAction(ActionEvent actionEvent) {
         changingAnchor.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/officers-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/officers-view.fxml"));
             changingAnchor.getChildren().add(newPane);
         }catch (Exception e){
 
@@ -355,7 +357,7 @@ public class AdminDashboardController implements Initializable {
     public void btnComplaintsOnAction(ActionEvent actionEvent) {
         changingAnchor.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/complaints-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/complaints-view.fxml"));
             changingAnchor.getChildren().add(newPane);
         }catch (Exception e){
 
@@ -365,7 +367,7 @@ public class AdminDashboardController implements Initializable {
     public void btnBillingOnAction(ActionEvent actionEvent) {
         changingAnchor.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/billings-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/billings-view.fxml"));
             changingAnchor.getChildren().add(newPane);
         }catch (Exception e){
 
@@ -380,7 +382,7 @@ public class AdminDashboardController implements Initializable {
     public void btnVendorOnAction(ActionEvent actionEvent) {
         changingAnchor.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/vendors-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/vendors-view.fxml"));
             changingAnchor.getChildren().add(newPane);
         }catch (Exception e){
 
@@ -390,7 +392,7 @@ public class AdminDashboardController implements Initializable {
     public void btnInventoryOnAction(ActionEvent actionEvent) {
         changingAnchor.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/inventories-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/inventories-view.fxml"));
             changingAnchor.getChildren().add(newPane);
         }catch (Exception e){
 
@@ -400,7 +402,7 @@ public class AdminDashboardController implements Initializable {
     public void btnDashboardOnAction(ActionEvent actionEvent) {
         adminDashBoardRootPane.getChildren().clear();
         try {
-            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/aquaflowwms/view/adminDashboard-view.fxml"));
+            AnchorPane newPane = FXMLLoader.load(getClass().getResource("/lk/wms/aquaflow/view/adminDashboard-view.fxml"));
             adminDashBoardRootPane.getChildren().add(newPane);
         }catch (Exception e){
 
