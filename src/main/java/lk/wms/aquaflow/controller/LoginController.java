@@ -58,26 +58,19 @@ public class LoginController implements Initializable {
         }
 
         // Determine user type
-        String userType = "";
-        if (radioAdmin.isSelected()) {
-            userType = "ADMIN";
-        } else if (radioOperator.isSelected()) {
-            userType = "OPERATOR";
-        } else {
-            showAlert("Login Failed", "Please select a user type (Admin/Operator).");
-            return;
-        }
+        String userType = radioAdmin.isSelected() ? "ADMIN" : "OPERATOR";
 
         try {
 
-            boolean isAuthenticated = loginBO.validateUser(userName, password);
+            boolean isAuthenticated = loginBO.validateUser(userName, password, userType);
+            System.out.println("validateUser returned: " + isAuthenticated);
 
             if (isAuthenticated) {
                 // Navigate to appropriate dashboard based on user type
                 if ("ADMIN".equals(userType)) {
-                    navigateToDashboard("/lk/wms/aquaflow/view/admin-dashboard-view.fxml");
+                    navigateToDashboard("/lk/wms/aquaflow/view/adminDashboard-view.fxml");
                 } else {
-                    navigateToDashboard("/lk/wms/aquaflow/view/operator-dashboard-view.fxml");
+                    navigateToDashboard("/lk/wms/aquaflow/view/operator-adminDashboard-view.fxml");
                 }
             } else {
                 showAlert("Login Failed", "Invalid credentials or unauthorized user type.");
@@ -103,7 +96,7 @@ public class LoginController implements Initializable {
 
     private void showVideo() {
         try {
-            String videoPath = Objects.requireNonNull(getClass().getResource("/lk/wms/aquaflow/assets/water-flow.mp4")).toExternalForm();
+            String videoPath = Objects.requireNonNull(getClass().getResource("/lk/wms/aquaflow/assets/Generated File June 06, 2025 - 10_04PM.mp4")).toExternalForm();
             Media media = new Media(videoPath);
             MediaPlayer mediaPlayer = new MediaPlayer(media);
             mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
