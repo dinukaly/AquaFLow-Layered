@@ -11,10 +11,11 @@ import lk.wms.aquaflow.bo.custom.BillingBO;
 import lk.wms.aquaflow.bo.custom.HouseholdsBO;
 import lk.wms.aquaflow.dto.BillDTO;
 import lk.wms.aquaflow.dto.HouseholdDTO;
+import lk.wms.aquaflow.dto.custom.CustomBillDTO;
+import lk.wms.aquaflow.entity.custom.CustomBill;
 import lk.wms.aquaflow.util.AlertUtil;
 import lk.wms.aquaflow.util.EmailUtil;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -49,9 +50,9 @@ public class ViewBillModalController {
 
     //private BillModel billModel = new BillModel();
     //private HouseholdModel householdModel = new HouseholdModel();
-    private BillingBO billModel = (BillingBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.BILLING);
+    private BillingBO billBO = (BillingBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.BILLING);
     private HouseholdsBO householdsBO = (HouseholdsBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.HOUSEHOLD);
-    private BillDTO currentBill;
+    private CustomBillDTO currentBill;
 
     public void initialize() {
         // Initially hide the reminder button
@@ -60,7 +61,7 @@ public class ViewBillModalController {
 
     public void loadBillData(String billId) {
         try {
-            currentBill = billModel.getBillById(billId);
+            currentBill = billBO.getBillById(billId);
 
             if (currentBill != null) {
                 // Set basic bill info
@@ -141,17 +142,17 @@ public class ViewBillModalController {
 
     // TODO: move this to custome method
     private String getHouseholdIdFromBill() throws SQLException, ClassNotFoundException {
+        return billBO.getHouseholdIdFromBill(currentBill.getBillId());
         // Get consumption record to find household ID
-        String consumptionId = currentBill.getConsumptionId();
-        ResultSet resultSet = lk.aquaFlow.util.CrudUtil.execute(
-                "SELECT house_id FROM consumption WHERE consumption_id = ?",
-                consumptionId
-        );
-
-        if (resultSet.next()) {
-            return resultSet.getString("house_id");
-        }
-        return null;
+//        String consumptionId = currentBill.getConsumptionId();
+//        ResultSet resultSet = lk.aquaFlow.util.CrudUtil.execute(
+//                "SELECT house_id FROM consumption WHERE consumption_id = ?",
+//                consumptionId
+//        );
+//
+//        if (resultSet.next()) {
+//            return resultSet.getString("house_id");
+//        }
     }
 
     private boolean isOverdue(String dueDateStr) {
@@ -173,4 +174,3 @@ public class ViewBillModalController {
         }
     }
 }
-
