@@ -10,9 +10,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class WaterSourceTM {
-    private String waterSourceId;
+    private String watersource_id;
+    private String source_name;
+    private String source_type;
     private String location;
-    private String sourceType;
-    private String villageName; // Will be populated later if needed
+    private double capacity;
+    private double remaining_capacity;
     private String status;
 }

@@ -36,13 +36,22 @@ public class WaterSourcesController implements Initializable {
     public TableView<WaterSourceTM> waterSourceTBV;
 
     @FXML
+    public TableColumn<WaterSourceTM, String> watersourceIdCol;
+
+    @FXML
     public TableColumn<WaterSourceTM, String> sourceNameCol;
 
     @FXML
     public TableColumn<WaterSourceTM, String> sourceTypeCol;
 
     @FXML
-    public TableColumn<WaterSourceTM, String> villageCol;
+    public TableColumn<WaterSourceTM, String> locationCol;
+
+    @FXML
+    public TableColumn<WaterSourceTM, Double> capacityCol;
+
+    @FXML
+    public TableColumn<WaterSourceTM, Double> remainingCapacityCol;
 
     @FXML
     public TableColumn<WaterSourceTM, String> statusCol;
@@ -52,13 +61,17 @@ public class WaterSourcesController implements Initializable {
 
   //  private final WaterSourceModel waterSourceModel = new WaterSourceModel();
     private final WaterSourceBO waterSourceBO = (WaterSourceBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.WATER_SOURCE);
+    public AnchorPane childRoot;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Initialize table columns
-        sourceNameCol.setCellValueFactory(new PropertyValueFactory<>("location"));
-        sourceTypeCol.setCellValueFactory(new PropertyValueFactory<>("sourceType"));
-        villageCol.setCellValueFactory(new PropertyValueFactory<>("villageName"));
+        watersourceIdCol.setCellValueFactory(new PropertyValueFactory<>("watersource_id"));
+        sourceNameCol.setCellValueFactory(new PropertyValueFactory<>("source_name"));
+        sourceTypeCol.setCellValueFactory(new PropertyValueFactory<>("source_type"));
+        locationCol.setCellValueFactory(new PropertyValueFactory<>("location"));
+        capacityCol.setCellValueFactory(new PropertyValueFactory<>("capacity"));
+        remainingCapacityCol.setCellValueFactory(new PropertyValueFactory<>("remaining_capacity"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
         // Custom cell factory for status column with styled labels
@@ -97,13 +110,13 @@ public class WaterSourcesController implements Initializable {
 
     private void handleEdit(WaterSourceTM waterSourceTM) {
         try {
-            WaterSourceDTO sourceDTO = waterSourceBO.getWaterSourceById(waterSourceTM.getWaterSourceId());
+            WaterSourceDTO sourceDTO = waterSourceBO.getWaterSourceById(waterSourceTM.getWatersource_id());
             if (sourceDTO == null) {
-                new Alert(Alert.AlertType.ERROR, "Could not find water source with ID: " + waterSourceTM.getWaterSourceId()).show();
+                new Alert(Alert.AlertType.ERROR, "Could not find water source with ID: " + waterSourceTM.getWatersource_id()).show();
                 return;
             }
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addWaterSource-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addWaterSource-Modal.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddWaterSourceModalController controller = loader.getController();
@@ -132,7 +145,7 @@ public class WaterSourcesController implements Initializable {
         Optional<ButtonType> result = confirmDialog.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.YES) {
             try {
-                boolean deleted = waterSourceBO.deleteWaterSource(waterSourceTM.getWaterSourceId());
+                boolean deleted = waterSourceBO.deleteWaterSource(waterSourceTM.getWatersource_id());
                 if (deleted) {
                     new Alert(Alert.AlertType.INFORMATION, "Water source deleted successfully.").show();
 
@@ -150,14 +163,30 @@ public class WaterSourcesController implements Initializable {
     private void loadWaterSources() {
         try {
             List<WaterSourceDTO> sources = waterSourceBO.getAllWaterSources();
+            String[] statusArray = {"Active", "Inactive", "Maintenance", "Contaminated", "Low", "Dry"};
             List<WaterSourceTM> tmList = sources.stream()
-                    .map(dto -> new WaterSourceTM(
-                            dto.getWaterSourceId(),
-                            dto.getLocation(),
-                            dto.getSourceType(),
-                            "", // will implemt later
-                            dto.getStatus()
-                    ))
+                    .map(dto -> {
+                        String statusStr = dto.getStatus();
+                        try {
+                            double statusDouble = Double.parseDouble(statusStr);
+                            int statusIndex = (int) statusDouble;
+                            if (statusIndex >= 0 && statusIndex < statusArray.length) {
+                                statusStr = statusArray[statusIndex];
+                            }
+                        } catch (NumberFormatException e) {
+                            // status is not a number, use it as is
+                        }
+
+                        return new WaterSourceTM(
+                                dto.getWatersource_id(),
+                                dto.getSource_name(),
+                                dto.getSource_type(),
+                                dto.getLocation(),
+                                dto.getCapacity(),
+                                dto.getRemaining_capacity(),
+                                statusStr
+                        );
+                    })
                     .collect(Collectors.toList());
 
             waterSourceTBV.setItems(FXCollections.observableArrayList(tmList));
@@ -177,7 +206,7 @@ public class WaterSourcesController implements Initializable {
 
     public void addWaterSourceBtnOnAction(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/aquaflowwms/view/modalViews/addWaterSource-Modal.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/wms/aquaflow/view/modalViews/addWaterSource-Modal.fxml"));
             AnchorPane loadModal = loader.load();
 
             AddWaterSourceModalController controller = loader.getController();
