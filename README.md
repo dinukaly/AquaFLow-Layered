@@ -1,58 +1,97 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f541b245-6e25-4bec-980e-f9857da4dc68" /># AquaFlow: Water Management System
 
-AquaFlow is a comprehensive water management system developed using JavaFX. This project aims to provide an efficient and user-friendly platform for managing water resources, monitoring usage, and optimizing distribution within a given environment.
+# AquaFlow 🚰 — Smart Water Distribution System (JavaFX)
 
-## Features
-- Intuitive JavaFX-based graphical user interface
-- Real-time monitoring of water usage
-- Resource allocation and distribution management
-- User authentication and role-based access
-- Data visualization and reporting
-- Modular and layered architecture for maintainability
+![Java](https://img.shields.io/badge/Java-17-blue.svg)
+![JavaFX](https://img.shields.io/badge/JavaFX-17-green.svg)
+![MySQL](https://img.shields.io/badge/Database-MySQL-orange.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Technologies Used
-- Java
-- JavaFX
-- MySQL
-- JDBC for database connectivity
-- Maven for dependency management
-- JasperReports for generating reports
-- Java Mail for sending emails
+AquaFlow is a JavaFX-based Smart Water Distribution System designed to help local authorities monitor water usage, manage resources and optimize distribution. It supports real-time monitoring, reporting, and email notifications built with a clean layered architecture.
 
-## Project Structure
-- **src/**: Source code for the application
-- **resources/**: FXML, images, and other static resources
-- **README.md**: Project documentation
 
-## Getting Started
-1. Clone the repository to your local machine.
-2. Open the project in your preferred Java IDE (e.g., IntelliJ IDEA, Eclipse).
-3. Ensure Java and JavaFX are properly configured.
-4. Build and run the application.
+## ✅ Key Features
 
-## Screenshots
-![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(24).png?raw=true)
-![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(20).png?raw=true)
-![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(16).png?raw=true)
-![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(23).png?raw=true)
-![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(26).png?raw=true)
-![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(14).png?raw=true)
-![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(27).png?raw=true)
-![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(14).png?raw=true)
-![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(30).png?raw=true)
-![Image Alt](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20(28).png?raw=true)
+- 🔹 JavaFX dashboard with real-time usage stats
+- 🔹 CRUD operations (Water Sources, Villages, Officers, Households, etc.)
+- 🔹 Water allocation & distribution tracking
+- 🔹 User login + role-based access control
+- 🔹 JasperReports PDF generation
+- 🔹 Email alerts via JavaMail API
+- 🔹 Layered architecture (Controller, Model, DAO, Util, DTO)
 
-## How to Use
 
-- Log in with your credentials.
-- Navigate through the dashboard to access different modules.
-- Monitor water usage, generate reports, and manage resources as needed.
+## 🛠 Technologies Used
 
-## Contributing
-Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
+| Layer / Module   | Tech / Tools            |
+|------------------|-------------------------|
+| UI / Frontend    | JavaFX                  |
+| Backend          | Java (Maven / JDBC)     |
+| Database         | MySQL                   |
+| Reporting        | JasperReports           |
+| Email            | JavaMail API            |
 
-## License
-This project is licensed under the MIT License.
+
+## 🗂 Project Structure
+
+
+AquaFlow/
+├─ src/
+│  ├─ controller/
+│  ├─ BO/
+│  ├─ dao/
+│  ├─ util/
+│  └─ dto/
+├─ resources/
+│  ├─ fxml/
+│  ├─ images/
+│  └─ jasper/
+├─ pom.xml
+└─ README.md
+
+
+## 🚀 Getting Started
+
+1. Clone the repository
+
+   git clone https://github.com/dinukaly/AquaFlow-Layered.git
+
+2. Open with **IntelliJ IDEA** (or Eclipse)
+
+3. Configure JavaFX SDK in the IDE
+
+4. Setup MySQL database with `AquaFlow` schema and update credentials in code
+
+5. Run using the Main class or JavaFX Launcher
 
 ---
-*For any questions or support, please contact the project maintainer.*
+
+## 📸 Screenshots
+
+| Dashboard                                                                                    | Billing And Payment                                                                            |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| ![](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20\(24\).png?raw=true) | ![](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20\(16\).png?raw=true) |
+
+| Allocation View                                                                              | Water Consumption                                                                           |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| ![](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20\(20\).png?raw=true) | ![](https://github.com/dinukaly/AquaFLow-Layered/blob/main/Screenshot%20\(28\).png?raw=true) |
+
+---
+
+## 🙌 Contributing
+
+Contributions are welcome!
+Fork the project, create a branch, and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+*For questions or support, feel free to contact the project maintainer via GitHub.*
+
+---
+
+
